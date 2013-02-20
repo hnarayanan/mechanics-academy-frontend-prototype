@@ -20,12 +20,12 @@
     <div class="container">
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li><a href="#">Browse Library</a></li>
-          <li><a href="#">Get Help</a></li>
-          <li><a href="#">Sign in</a></li>
-          <li class="active"><a href="#">Sign up</a></li>
+          <li><%= link_to 'Browse Library', '/library.html' %></li>
+          <li><%= link_to 'Get Help', '/support.html' %></li>
+          <li><%= link_to 'Sign in', '/signin.html' %></li>
+          <li class="active"><%= link_to 'Sign up', '/plans.html' %></li>
         </ul>
-        <h3>Mechanics Academy</h3>
+        <h3><%= link_to 'Mechanics Academy', '/' %></h3>
       </div>
       <hr>
       <%= yield %>
