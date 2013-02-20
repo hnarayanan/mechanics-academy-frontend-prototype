@@ -10,5 +10,6 @@
 # Ignore the build directory
 /build
 
-# Ignore Sass' cache
-/.sass-cache
+Ignore system cruft
+*~
+.DS_Store
