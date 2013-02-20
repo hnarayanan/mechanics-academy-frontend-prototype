@@ -7,7 +7,7 @@ title: Mechanics Academy Home
     <div class="jumbotron">
       <h1>An intuitive way to learn modern mechanics!</h1>
       <p class="lead">Mechanics Academy teaches an exciting blend of mechanics, mathematics and scientific computing through video lessons, in-browser exercises and support from a knowledgeable community.</p>
-	<a class="btn btn-large btn-success" href="#">Get started today!</a>
+	<a class="btn btn-large btn-success" href="#">Start learning today!</a>
     </div>
   </div>
   <div class="span6 text-center">
@@ -32,4 +32,18 @@ title: Mechanics Academy Home
     <p>Get help from experts in the community&mdash;and work for them once you've learnt the skills!</p>
   </div>
 </div>
+<hr>
+<h2>Recent course material</h2>
+<ul class="thumbnails">
+  <% 8.times do |num| %>
+  <li class="span3">
+    <a href="#" class="thumbnail">
+      <img data-src="holder.js/300x200" alt="">
+    </a>
+    <h3><%= course_name %></h3>
+    <p><%= course_description %></p>
+  </li>
+  <% end %>
+</ul>
+
 <hr>

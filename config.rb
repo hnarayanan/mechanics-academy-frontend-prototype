@@ -2,6 +2,15 @@ set :css_dir, 'css'
 set :js_dir, 'js'
 set :images_dir, 'img'
 
+helpers do
+  def course_name(length=2)
+    lorem.words(length).split.map {|word| word.capitalize }.join(" ")
+  end
+  def course_description(length=8)
+    lorem.words(length).capitalize + '.'
+  end
+end
+
 # Page options, layouts, aliases and proxies
 ###
 
@@ -30,12 +39,7 @@ set :images_dir, 'img'
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
 
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+
 
 # Build-specific configuration
 configure :build do
