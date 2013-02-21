@@ -30,6 +30,31 @@
       <hr>
       <%= yield %>
       <hr>
+      <a href="#myModal" role="button" class="btn pull-right" data-toggle="modal">Page notes</a>
+      <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+	  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	  <h3 id="myModalLabel"><%= data.page.title || "This page" %></h3>
+	</div>
+	<div class="modal-body">
+	  <p>This page will eventually contain:</p>
+	  <ol>
+	    <% data.page.contains.each do |item| %>
+	    <li><%= item %></li>
+	    <% end %>
+	  </ol>
+	  <p>It helps meet the following specific goals: <%= data.page.goals || "" %></p>
+	  <p>Interesting and unfinished ideas:</p>
+	  <ol>
+	    <% data.page.ideas.each do |idea| %>
+	    <li><%= idea %></li>
+	    <% end %>
+	  </ol>
+	</div>
+	<div class="modal-footer">
+	  <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+	</div>
+      </div>
       <div class="footer">
         <p>&copy; Harish Narayanan 2013</p>
       </div>
