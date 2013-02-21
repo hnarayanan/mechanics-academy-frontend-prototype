@@ -2,16 +2,7 @@ set :css_dir, 'css'
 set :js_dir, 'js'
 set :images_dir, 'img'
 
-helpers do
-  def course_name
-    length = Random.rand(0..1) + 2
-    lorem.words(length).slice(0, 18).split.map {|word| word.capitalize }.join(" ")
-  end
-  def course_description
-    length = Random.rand(0..4) + 8
-    lorem.words(length).slice(0, 60).capitalize + '.'
-  end
-end
+activate :directory_indexes
 
 # Page options, layouts, aliases and proxies
 ###
@@ -41,18 +32,16 @@ end
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
 
-
-
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 
   # Enable cache buster
-  # activate :cache_buster
+  activate :cache_buster
 
   # Use relative URLs
   # activate :relative_assets
