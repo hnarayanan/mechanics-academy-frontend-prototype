@@ -1,6 +1,6 @@
 module CourseHelpers
 
-  def random_between(first, last):
+  def random_between(first, last)
       Random.rand(0..last-first) + first
   end
 
