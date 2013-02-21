@@ -4,6 +4,13 @@ set :images_dir, 'img'
 
 activate :directory_indexes
 
+configure :build do
+  activate :minify_css
+  activate :minify_javascript
+  activate :cache_buster
+end
+
+###
 # Page options, layouts, aliases and proxies
 ###
 
@@ -25,32 +32,4 @@ activate :directory_indexes
 #   @which_fake_page = "Rendering a fake page with a variable"
 # end
 
-###
-# Helpers
-###
 
-# Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
-
-# Build-specific configuration
-configure :build do
-  # For example, change the Compass output style for deployment
-  activate :minify_css
-
-  # Minify Javascript on build
-  activate :minify_javascript
-
-  # Enable cache buster
-  activate :cache_buster
-
-  # Use relative URLs
-  # activate :relative_assets
-
-  # Compress PNGs after build
-  # First: gem install middleman-smusher
-  # require "middleman-smusher"
-  # activate :smusher
-
-  # Or use a different image path
-  # set :http_path, "/Content/images/"
-end
