@@ -10,11 +10,9 @@ end
 
 Time.zone = "Europe/Oslo"
 
-with_layout "blog/layout" do
-  page "/blog/*"
-end
 
-page "/blog.html", :proxy => "/blog/index.html", :layout => "blog/layout"
+page "blog/*", :layout => "blog/layout"
+page "blog.html", :proxy => "blog/index.html", :layout => "blog/layout"
 
 activate :blog do |blog|
   blog.permalink = "blog/:year/:month/:day/:title.html"
