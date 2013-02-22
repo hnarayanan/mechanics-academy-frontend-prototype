@@ -8,6 +8,27 @@ configure :build do
   activate :cache_buster
 end
 
+Time.zone = "Europe/Oslo"
+
+with_layout "blog/layout" do
+  page "/blog/*"
+end
+
+activate :blog do |blog|
+  blog.permalink = "blog/:year/:month/:day/:title.html"
+  blog.sources = "blog/:year-:month-:day-:title.html"
+  blog.taglink = "blog/tags/:tag.html"
+  blog.year_link = "blog/:year.html"
+  blog.month_link = "blog/:year/:month.html"
+  blog.day_link = "blog/:year/:month/:day.html"
+  blog.tag_template = "blog/tag.html"
+  blog.calendar_template = "blog/calendar.html"
+  blog.paginate = true
+  blog.per_page = 10
+end
+
+# page "/blog/feed.xml", :layout => false
+
 activate :directory_indexes
 
 ###
