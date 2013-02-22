@@ -25,31 +25,33 @@
           <li><%= link_to 'Sign in', '/signin.html' %></li>
           <li class="active"><%= link_to 'Sign up', '/plans.html' %></li>
         </ul>
-        <h3> <%= link_to 'Mechanics Academy', '/' %> <sup><span class="label"><%= link_to 'mock-up', '/contribute.html' %></span></sup></h3>
+        <h3> <%= link_to 'Mechanics Academy', '/' %> <sup><span class="label"><%= link_to 'prototype', '/contribute.html' %></span></sup></h3>
       </div>
       <hr>
       <%= yield %>
       <hr>
-      <a href="#myModal" role="button" class="btn pull-right" data-toggle="modal">Page notes</a>
+      <a href="#myModal" role="button" class="btn btn-success pull-right" data-toggle="modal">Got ideas?</a>
       <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-header">
 	  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-	  <h3 id="myModalLabel"><%= data.page.title || "This page" %></h3>
+	  <h3 id="myModalLabel">Ideas for &ldquo;<%= data.page.title || "This page" %>&rdquo;</h3>
 	</div>
 	<div class="modal-body">
-	  <p>This page will eventually contain:</p>
+	  <p>Notice that much of what you're seeing right now is simply a prototype. The notes below share some thoughts on what this page will eventually become.</p>
+	  <p>This page will contain:</p>
 	  <ol>
 	    <% data.page.contains.each do |item| %>
 	    <li><%= item %></li>
 	    <% end %>
 	  </ol>
-	  <p>It helps meet the following specific goals: <%= data.page.goals || "" %></p>
-	  <p>Interesting and unfinished ideas:</p>
+	  <p>It will help meet the following specific goals: <%= data.page.goals || "" %></p>
+	  <p>Related interesting and unfinished ideas:</p>
 	  <ol>
 	    <% data.page.ideas.each do |idea| %>
 	    <li><%= idea %></li>
 	    <% end %>
 	  </ol>
+	  <p>If you have more ideas to share or want to <%= link_to 'contribute to Mechanics Academy', '/contribute.html' %>, please get in touch.</p>
 	</div>
 	<div class="modal-footer">
 	  <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
