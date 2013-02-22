@@ -14,6 +14,8 @@ with_layout "blog/layout" do
   page "/blog/*"
 end
 
+page "/blog.html", :proxy => "/blog/index.html", :layout => "blog/layout"
+
 activate :blog do |blog|
   blog.permalink = "blog/:year/:month/:day/:title.html"
   blog.sources = "blog/:year-:month-:day-:title.html"
@@ -32,7 +34,7 @@ end
 activate :directory_indexes
 
 ###
-# Page options, layouts, aliases and proxies
+# page options, layouts, aliases and proxies
 ###
 
 # Per-page layout changes:
@@ -47,10 +49,3 @@ activate :directory_indexes
 # with_layout :admin do
 #   page "/admin/*"
 # end
-
-# Proxy (fake) files
-# page "/this-page-has-no-template.html", :proxy => "/template-file.html" do
-#   @which_fake_page = "Rendering a fake page with a variable"
-# end
-
-
