@@ -25,3 +25,8 @@ body {
     color: #fff;
     text-decoration: none;
 }
+
+.footer .text-right {
+    padding-top: 8px;
+    padding-right: 12px;
+}

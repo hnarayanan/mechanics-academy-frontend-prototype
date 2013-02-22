@@ -22,42 +22,54 @@
         <ul class="nav nav-pills pull-right">
           <li><%= link_to 'Browse Library', '/library.html' %></li>
           <li><%= link_to 'Get Help', '/support.html' %></li>
-          <li><%= link_to 'Sign in', '/signin.html' %></li>
-          <li class="active"><%= link_to 'Sign up', '/plans.html' %></li>
+          <li><%= link_to 'Sign In', '/signin.html' %></li>
+          <li class="active"><%= link_to 'Sign Up', '/plans.html' %></li>
         </ul>
         <h3> <%= link_to 'Mechanics Academy', '/' %> <sup><span class="label"><%= link_to 'prototype', '/contribute.html' %></span></sup></h3>
       </div>
       <hr>
       <%= yield %>
       <hr>
-      <a href="#myModal" role="button" class="btn btn-success pull-right" data-toggle="modal">Got ideas?</a>
-      <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-header">
-	  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-	  <h3 id="myModalLabel">Ideas for &ldquo;<%= data.page.title || "This page" %>&rdquo;</h3>
+      <div class="footer row-fluid">
+	<div class="span6">
+          <ul class="nav nav-pills">
+            <li><%= link_to 'Browse Library', '/library.html' %></li>
+            <li><%= link_to 'About Us', '/about.html' %></li>
+            <li><%= link_to 'Our Blog', '/blog.html' %></li>
+            <li><%= link_to 'Terms of Use', '#' %></li>
+          </ul>
 	</div>
-	<div class="modal-body">
-	  <p>What you're seeing right now is simply a prototype. This page will eventually contain:</p>
-	  <ol>
-	    <% data.page.contains.each do |item| %>
-	    <li><%= item %></li>
-	    <% end %>
-	  </ol>
-	  <p>This page will help meet the following goals of the project: <%= data.page.goals || "" %></p>
-	  <p>Related interesting ideas:</p>
-	  <ol>
-	    <% data.page.ideas.each do |idea| %>
-	    <li><%= idea %></li>
-	    <% end %>
-	  </ol>
-	  <p>If you have more ideas to share or want to <%= link_to 'contribute to Mechanics Academy', '/contribute.html' %>, please get in touch.</p>
+	<div class="span3">
+	  <a href="#myModal" role="button" class="btn" data-toggle="modal">Page ideas</a>
 	</div>
-	<div class="modal-footer">
-	  <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+	<div class="span3">
+	  <p class="muted text-right">&copy; 2013 Mechanics Academy</p>
 	</div>
       </div>
-      <div class="footer">
-        <p>&copy; Harish Narayanan 2013</p>
+    </div>
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	<h3 id="myModalLabel">Ideas for &ldquo;<%= data.page.title || "This page" %>&rdquo;</h3>
+      </div>
+      <div class="modal-body">
+	<p>What you're seeing right now is simply a prototype. This page will eventually contain:</p>
+	<ol>
+	  <% data.page.contains.each do |item| %>
+	  <li><%= item %></li>
+	  <% end %>
+	</ol>
+	<p>This page will help meet the following goals of the project: <%= data.page.goals || "" %></p>
+	<p>Related interesting ideas:</p>
+	<ol>
+	  <% data.page.ideas.each do |idea| %>
+	  <li><%= idea %></li>
+	  <% end %>
+	</ol>
+	<p>If you have more ideas to share or want to <%= link_to 'contribute to Mechanics Academy', '/contribute.html' %>, please get in touch.</p>
+      </div>
+      <div class="modal-footer">
+	<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
       </div>
     </div>
     <%= javascript_include_tag "jquery-1.9.1.min.js", "bootstrap", "holder", "site" %>
