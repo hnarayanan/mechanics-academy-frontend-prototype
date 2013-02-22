@@ -37,15 +37,14 @@
 	  <h3 id="myModalLabel">Ideas for &ldquo;<%= data.page.title || "This page" %>&rdquo;</h3>
 	</div>
 	<div class="modal-body">
-	  <p>Notice that much of what you're seeing right now is simply a prototype. The notes below share some thoughts on what this page will eventually become.</p>
-	  <p>This page will contain:</p>
+	  <p>What you're seeing right now is simply a prototype. This page will eventually contain:</p>
 	  <ol>
 	    <% data.page.contains.each do |item| %>
 	    <li><%= item %></li>
 	    <% end %>
 	  </ol>
-	  <p>It will help meet the following specific goals: <%= data.page.goals || "" %></p>
-	  <p>Related interesting and unfinished ideas:</p>
+	  <p>This page will help meet the following goals of the project: <%= data.page.goals || "" %></p>
+	  <p>Related interesting ideas:</p>
 	  <ol>
 	    <% data.page.ideas.each do |idea| %>
 	    <li><%= idea %></li>
