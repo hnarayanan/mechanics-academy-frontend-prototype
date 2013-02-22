@@ -1,5 +1,5 @@
 ---
-title: About the project
+title: About Mechanics Academy
 contains:
   - Information about the team behind Mechanics Academy
   - A brief introduction to the project and a summary of its goals
@@ -13,18 +13,65 @@ ideas:
   - Codecademy about page
 ---
 
-<h2>About the project</h2>
-<p>Mechanics Academy aims to be a comprehensive resource for anyone interested in learning mechanics. In particular, the project aims to:</p>
-
-<ul>
-  <li>Attract learners to the rich and useful topic of mechanics</li>
-  <li>Act as a catalogue of high-quality learning resources for mechanics</li>
-  <li>Offer help and support to mechanics learners</li>
-  <li>Provide mechanisms to test learning and gauge competency</li>
-  <li>Serve as a conduit between a community with mechanics-related competency and the industry</li>
-  <li>Provide scientific computing services <em>on the cloud</em> for easy access to powerful computational mechanics tools</li>
-</ul>
-
+<div class="row-fluid">
+  <div class="span8">
+    <h2>About Mechanics Academy</h2>
+    <h3>The vision</h3>
+    <p>Mechanics Academy aims to be a comprehensive resource for anyone interested in learning mechanics. In particular, the project aims to:</p>
+    <ul>
+      <li>Attract learners to the rich and useful topic of mechanics</li>
+      <li>Act as a catalogue of high-quality learning resources for mechanics</li>
+      <li>Offer help and support to mechanics learners</li>
+      <li>Provide mechanisms to test learning and gauge competency</li>
+      <li>Serve as a conduit between a community with mechanics-related competency and the industry</li>
+      <li>Provide scientific computing services <em>on the cloud</em> for easy access to powerful computational mechanics tools</li>
+    </ul>
+    <hr>
+    <h3>The team</h3>
+    <p>The team behind Mechanics Academy is working hard on realising its vision. If you believe in the goals of the project, <%= link_to 'consider joining us', '/contribute.html' %>!</p>
+    <ul class="thumbnails">
+      <% 3.times do |num| %>
+      <li class="span4">
+	<a href="#" class="thumbnail">
+	  <img data-src="holder.js/233x200/text:Team member" alt="">
+	</a>
+      </li>
+      <% end %>
+    </ul>
+    <hr>
+    <h3>Answers to frequently asked questions</h3>
+    <% 5.times do |num| %>
+    <p><strong><%= lorem.words(15).capitalize %>?</strong></p>
+    <p><%= lorem.words(30).capitalize %>.</p>
+    <% end %>
+  </div>
+  <div class="span3 offset1">
+    <h3>Contact</h3>
+    <address>
+      <strong>General enquiries</strong><br>
+      <a href="mailto:#">info@mechanicsacademy.org</a><br>
+    </address>
+    <address>
+      <strong>Content and technical feedback</strong><br>
+      <a href="mailto:#">tech@mechanicsacademy.org</a><br>
+    </address>
+    <address>
+      <strong>Media</strong><br>
+      <a href="mailto:#">media@mechanicsacademy.org</a><br>
+    </address>
+    <hr>
+    <h3>From the blog</h3>
+    <ul class="unstyled">
+      <% 3.times do |num| %>
+      <li>
+	<a href="#"><%= course_description %></a>
+	<p class="muted"><%= lorem.date "%b %Y"%> &mdash; <%= course_name %></p>
+      </li>
+      <% end %>
+    </ul>
+    <p><%= link_to 'Read more&hellip;', '/blog.html' %></p>
+  </div>
+</div>
 
 
 
