@@ -12,11 +12,12 @@ Time.zone = "Europe/Oslo"
 
 page "blog.html", :proxy => "blog/index.html", :layout => "blog_layout"
 page "blog/2013.html", :layout => "blog_layout"
+page "blog/topic*", :layout => "blog_layout"
 
 activate :blog do |blog|
   blog.permalink = "blog/:year/:month/:day/:title.html"
   blog.sources = "blog/articles/:year-:month-:day-:title.html"
-  blog.taglink = "blog/tags/:tag.html"
+  blog.taglink = "blog/topic/:tag.html"
   blog.year_link = "blog/:year.html"
   blog.month_link = "blog/:year/:month.html"
   blog.day_link = "blog/:year/:month/:day.html"

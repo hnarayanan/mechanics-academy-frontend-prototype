@@ -10,12 +10,12 @@
             <li>
 	      <a href="<%= article.url %>"><%= article.title %></a>
 	      <br>
-	      <span class="muted"><%= article.date.strftime('%B %e, %Y') %></span>
+	      <p class="muted"><small><%= article.date.strftime('%B %e, %Y') %></small></p>
 	    </li>
             <% end %>
 	  </ul>
 	  <hr>
-	  <h3>Categories</h3>
+	  <h3>Topics</h3>
 	  <ol>
             <% blog.tags.each do |tag, articles| %>
             <li><a href="<%= tag_path tag %>"><%= tag %> (<%= articles.size %>)</a></li>
