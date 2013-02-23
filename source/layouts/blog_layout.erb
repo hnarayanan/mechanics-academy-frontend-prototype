@@ -5,11 +5,15 @@
 	</div>
 	<div class="span3 offset2">
 	  <h3>Recent Articles</h3>
-	  <ol>
+	  <ul class="unstyled">
             <% blog.articles[0...10].each do |article| %>
-            <li><a href="<%= article.url %>"><%= article.title %></a> <span><%= article.date.strftime('%b %e') %></span></li>
+            <li>
+	      <a href="<%= article.url %>"><%= article.title %></a>
+	      <br>
+	      <span class="muted"><%= article.date.strftime('%B %e, %Y') %></span>
+	    </li>
             <% end %>
-	  </ol>
+	  </ul>
 	  <hr>
 	  <h3>Categories</h3>
 	  <ol>

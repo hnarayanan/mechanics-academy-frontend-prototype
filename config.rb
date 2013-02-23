@@ -15,7 +15,7 @@ page "blog/2013.html", :layout => "blog_layout"
 
 activate :blog do |blog|
   blog.permalink = "blog/:year/:month/:day/:title.html"
-  blog.sources = "blog/:year-:month-:day-:title.html"
+  blog.sources = "blog/articles/:year-:month-:day-:title.html"
   blog.taglink = "blog/tags/:tag.html"
   blog.year_link = "blog/:year.html"
   blog.month_link = "blog/:year/:month.html"
