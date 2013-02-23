@@ -22,7 +22,7 @@ activate :blog do |blog|
   blog.month_link = "blog/:year/:month.html"
   blog.day_link = "blog/:year/:month/:day.html"
   blog.layout = "post_layout"
-  blog.tag_template = "blog/tag.html"
+  blog.tag_template = "blog/topic.html"
   blog.calendar_template = "blog/calendar.html"
   blog.paginate = true
   blog.per_page = 10
