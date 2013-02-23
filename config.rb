@@ -10,7 +10,6 @@ end
 
 Time.zone = "Europe/Oslo"
 
-
 page "blog/*", :layout => "blog/layout"
 page "blog.html", :proxy => "blog/index.html", :layout => "blog/layout"
 

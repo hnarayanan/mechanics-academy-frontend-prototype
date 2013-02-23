@@ -1,33 +1,4 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title><%= data.page.title || "The Middleman" %></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <%= stylesheet_link_tag "bootstrap", "bootstrap-responsive", "site" %>
-    <%= javascript_include_tag  "modernizr-2.6.2-respond-1.1.0.min" %>
-  </head>
-
-  <body class="<%= page_classes %>">
-    <!--[if lt IE 7]>
-        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    <![endif]-->
-    <div class="container">
-      <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li><%= link_to 'Browse Library', '/library.html' %></li>
-          <li><%= link_to 'Get Help', '/support.html' %></li>
-          <li><%= link_to 'Sign In', '#' %></li>
-          <li class="active"><%= link_to 'Sign Up', '/plans.html' %></li>
-        </ul>
-        <h3> <%= link_to 'Mechanics Academy', '/' %> <sup><span class="label"><%= link_to 'prototype', '/contribute.html' %></span></sup></h3>
-      </div>
-      <hr>
+<%= partial 'layouts/header' %>
       <div class="row-fluid">
 	<div class="span8">
 	  <%= yield %>
@@ -55,27 +26,4 @@
 	  </ol>
 	</div>
       </div>
-      <hr>
-      <div class="footer row-fluid">
-	<div class="span6">
-          <ul class="nav nav-pills">
-            <li><%= link_to 'Browse Library', '/library.html' %></li>
-            <li><%= link_to 'About Us', '/about.html' %></li>
-            <li><%= link_to 'Our Blog', '/blog.html' %></li>
-            <li><%= link_to 'Terms of Use', '#' %></li>
-          </ul>
-	</div>
-	<div class="span6">
-	  <p class="muted text-right">&copy; 2013 Mechanics Academy</p>
-	</div>
-      </div>
-    </div>
-    <%= javascript_include_tag "jquery-1.9.1.min.js", "bootstrap", "holder", "site" %>
-    <script>
-      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-      s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script>
-  </body>
-</html>
+<%= partial 'layouts/footer', :locals => { :ideas => false } %>
