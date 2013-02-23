@@ -1,0 +1,5 @@
+<% wrap_layout :blog_layout do %>
+    <h2><%= current_page.title %></h2>
+    <%= yield %>
+    <p class="muted"><%= current_page.date.strftime('%B %e, %Y') %></p>
+<% end %>

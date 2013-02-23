@@ -1,9 +1,9 @@
 <%= partial 'layouts/header' %>
       <div class="row-fluid">
-	<div class="span8">
+	<div class="span7">
 	  <%= yield %>
 	</div>
-	<div class="span4">
+	<div class="span3 offset2">
 	  <h3>Recent Articles</h3>
 	  <ol>
             <% blog.articles[0...10].each do |article| %>
@@ -11,17 +11,10 @@
             <% end %>
 	  </ol>
 	  <hr>
-	  <h3>Tags</h3>
+	  <h3>Categories</h3>
 	  <ol>
             <% blog.tags.each do |tag, articles| %>
             <li><a href="<%= tag_path tag %>"><%= tag %> (<%= articles.size %>)</a></li>
-            <% end %>
-	  </ol>
-	  <hr>
-	  <h3>By Year</h3>
-	  <ol>
-            <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
-            <li><a href="<%= blog_year_path year %>"><%= year %> (<%= articles.size %>)</a></li>
             <% end %>
 	  </ol>
 	</div>

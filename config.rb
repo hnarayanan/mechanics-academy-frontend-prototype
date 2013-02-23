@@ -10,8 +10,8 @@ end
 
 Time.zone = "Europe/Oslo"
 
-page "blog/*", :layout => "blog_layout"
 page "blog.html", :proxy => "blog/index.html", :layout => "blog_layout"
+page "blog/2013.html", :layout => "blog_layout"
 
 activate :blog do |blog|
   blog.permalink = "blog/:year/:month/:day/:title.html"
@@ -20,6 +20,7 @@ activate :blog do |blog|
   blog.year_link = "blog/:year.html"
   blog.month_link = "blog/:year/:month.html"
   blog.day_link = "blog/:year/:month/:day.html"
+  blog.layout = "post_layout"
   blog.tag_template = "blog/tag.html"
   blog.calendar_template = "blog/calendar.html"
   blog.paginate = true
