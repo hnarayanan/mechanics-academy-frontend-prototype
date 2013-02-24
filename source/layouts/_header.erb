@@ -23,6 +23,16 @@
           <li><%= link_to 'Browse Library', '/library.html' %></li>
           <li><%= link_to 'Get Help', '/support.html' %></li>
 	  <% if logged_in %>
+	  <li class="dropdown">
+                <a class="dropdown-toggle" id="drop4" role="button" data-toggle="dropdown" href="#">Diligent J. Student <b class="caret"></b></a>
+                <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Profile</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Account</a></li>
+                  <li role="presentation" class="divider"></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sign out</a></li>
+                </ul>
+              </li>
+	  </li>
 	  <% else %>
           <li><%= link_to 'Sign In', '#modal-signin', :data => { :toggle=>"modal" } %></li>
           <li class="active"><%= link_to 'Sign Up', '#modal-signup', :data => { :toggle=>"modal" } %></li>
