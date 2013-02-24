@@ -60,15 +60,7 @@ ideas:
       <a href="mailto:#">media@mechanicsacademy.org</a><br>
     </address>
     <hr>
-    <h3>From the blog</h3>
-    <ul class="unstyled">
-      <% 3.times do |num| %>
-      <li>
-	<a href="#"><%= course_description %></a>
-	<p class="muted"><%= lorem.date "%b %Y"%> &mdash; <%= course_name %></p>
-      </li>
-      <% end %>
-    </ul>
+    <%= partial "partials/from_the_blog" %>
     <p><%= link_to 'Read more&hellip;', '/blog.html' %></p>
   </div>
 </div>

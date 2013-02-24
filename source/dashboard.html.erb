@@ -8,7 +8,17 @@ ideas:
   - Udacity "My courses" page
   - EdX dashboard
   - Codeschool completed courses badges on the dashboard
+  - Act as a highlight of important information pertinent to all classes -- insert these below each class
 ---
 
-<h2>My courses</h2>
-<p>Some sort of support stuff goes here</p>
+<div class="row-fluid">
+  <div class="span7">
+    <h2>Current courses</h2>
+    <%= partial "/partials/progress" %>
+  </div>
+  <div class="span3 offset1">
+    <h3>Completed courses</h3>
+    <hr>
+    <%= partial "partials/from_the_blog" %>
+  </div>
+</div>
