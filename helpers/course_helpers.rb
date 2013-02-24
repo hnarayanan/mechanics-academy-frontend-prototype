@@ -14,4 +14,9 @@ module CourseHelpers
     lorem.words(length).slice(0, 60).capitalize + '.'
   end
 
+  def course_long_description
+    length = random_between(18, 24)
+    lorem.words(length).capitalize + '.'
+  end
+
 end

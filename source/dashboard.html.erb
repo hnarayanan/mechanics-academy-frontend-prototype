@@ -1,14 +1,17 @@
 ---
 title: My courses
 contains:
-  - Courses the student is taking and a notes progress in each one
+  - A progress report for courses the student is currently taking
+  - A report card of courses the student has taken in the past
+  - Important information (e.g. upcoming deadlines) related to courses the student is currently taking
   - Link to a complete list of classes the student might want to take
+  - Recent news related to Mechanics Academy
 goals: 1
 ideas:
   - Udacity "My courses" page
   - EdX dashboard
   - Codeschool completed courses badges on the dashboard
-  - Act as a highlight of important information pertinent to all classes -- insert these below each class
+  - Present important information pertinent to current classes along with the progress report
 ---
 
 <div class="row-fluid">
@@ -18,6 +21,9 @@ ideas:
   </div>
   <div class="span3 offset1">
     <h3>Completed courses</h3>
+    <% 4.times do |num| %>
+    <a href="#"><img src="holder.js/120x120/text:Certificate" class="img-circle certificate"></a>
+    <% end %>
     <hr>
     <%= partial "partials/from_the_blog" %>
   </div>
