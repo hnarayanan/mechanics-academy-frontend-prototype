@@ -1,4 +1,4 @@
-<%= partial 'layouts/header' %>
+<%= partial 'layouts/header', :locals => { :logged_in => false } %>
       <div class="row-fluid">
 	<div class="span7">
 	  <%= yield %>
