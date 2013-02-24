@@ -30,3 +30,10 @@ body {
     padding-top: 8px;
     padding-right: 12px;
 }
+
+body #modal-signup {
+    /* new custom width */
+    width: 300px;
+    /* must be half of the width, minus scrollbar on the left (30px) */
+    margin-left: -150px;
+}
