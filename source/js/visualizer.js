@@ -8,7 +8,7 @@ window.onload = function() {
     // create a new X.mesh
     var solution = new X.mesh();
     // .. and associate the .vtk file to it
-    solution.file = 'data/skull.vtk';
+    solution.file = '/data/skull.vtk';
     // .. make it transparent
     solution.opacity = 0.7;
     solution.magicmode = true;
