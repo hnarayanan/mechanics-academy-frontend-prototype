@@ -34,3 +34,13 @@ body {
 .certificate {
     padding: 5px;
 }
+
+.headerlink {
+    visibility: hidden;
+}
+#visualization {
+    background-color:#000;
+    position: fixed;
+    width: 600px;
+    height: 700px;
+}

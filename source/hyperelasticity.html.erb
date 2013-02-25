@@ -1,0 +1,261 @@
+---
+title: Application to Hyperelasticity
+contains:
+  - A simulation demo, where users can change parameters and models and get a fel for this sort of PDE
+goals: 1
+ideas:
+  - Use earlier static prototype
+exercise: true
+---
+
+<div class="row-fluid">
+  <div class="span6">
+    <div class="section" id="hyperelasticity">
+      <span id="demo-pde-hyperelasticity-python-documentation"></span><h2>Hyperelasticity<a class="headerlink" href="#hyperelasticity" title="Permalink to this headline">¶</a></h2>
+      <div class="section" id="equation-and-problem-definition">
+	<h3>Equation and problem definition<a class="headerlink" href="#equation-and-problem-definition" title="Permalink to this headline">¶</a></h3>
+	<p>By definition, boundary value problems for hyperelastic media can be
+	  expressed as minimisation problems, and the minimization approach is
+	  adopted in this example. For a domain <span class="math">\(\Omega \subset
+	    \mathbb{R}^{d}\)</span>, where <span class="math">\(d\)</span> denotes the spatial dimension, the
+	  task is to find the displacement field <span class="math">\(u: \Omega \rightarrow
+	    \mathbb{R}^{d}\)</span> that minimises the total potential energy <span class="math">\(\Pi\)</span>:</p>
+	<div class="math">
+	  \[\min_{u \in V} \Pi\]</div>
+	<p>where <span class="math">\(V\)</span> is a suitable function space that satisfies boundary
+	  conditions on <span class="math">\(u\)</span>.  The total potential energy is given by</p>
+	<div class="math">
+	  \[\Pi = \int_{\Omega} \psi(u) \, {\rm d} x
+	  - \int_{\Omega} B \cdot u \, {\rm d} x
+	  - \int_{\partial\Omega} T \cdot u \, {\rm d} s\]</div>
+	<p>where <span class="math">\(\psi\)</span> is the elastic stored energy density, <span class="math">\(B\)</span> is a
+	  body force (per unit reference volume) and <span class="math">\(T\)</span> is a traction force
+	  (per unit reference area).</p>
+	<p>At minimum points of <span class="math">\(\Pi\)</span>, the directional derivative of <span class="math">\(\Pi\)</span>
+	  with respect to change in <span class="math">\(u\)</span></p>
+	<div class="math" id="equation-first_variation">
+	  <span class="eqno">(1)</span>\[L(u; v) = D_{v} \Pi = \left. \frac{d \Pi(u + \epsilon v)}{d\epsilon} \right|_{\epsilon = 0}\]</div>
+	<p>is equal to zero for all <span class="math">\(v \in V\)</span>:</p>
+	<div class="math">
+	  \[L(u; v) = 0 \quad \forall \ v \in V.\]</div>
+	<p>To minimise the potential energy, a solution to the variational
+	  equation above is sought. Depending on the potential energy
+	  <span class="math">\(\psi\)</span>, <span class="math">\(L(u; v)\)</span> can be nonlinear in <span class="math">\(u\)</span>. In such a
+	  case, the Jacobian of <span class="math">\(L\)</span> is required in order to solve this
+	  problem using Newton&#8217;s method. The Jacobian of <span class="math">\(L\)</span> is defined as</p>
+	<div class="math" id="equation-second_variation">
+	  <span class="eqno">(2)</span>\[a(u; du, v) = D_{du} L = \left. \frac{d L(u + \epsilon du; v)}{d\epsilon} \right|_{\epsilon = 0} .\]</div>
+	<div class="section" id="elastic-stored-energy-density">
+	  <h4>Elastic stored energy density<a class="headerlink" href="#elastic-stored-energy-density" title="Permalink to this headline">¶</a></h4>
+	  <p>To define the elastic stored energy density, consider the deformation
+	    gradient <span class="math">\(F\)</span></p>
+	  <div class="math">
+	    \[F = I + \nabla u,\]</div>
+	  <p>the right Cauchy-Green tensor <span class="math">\(C\)</span></p>
+	  <div class="math">
+	    \[C = F^{T} F,\]</div>
+	  <p>and the scalars  <span class="math">\(J\)</span> and <span class="math">\(I_{c}\)</span></p>
+	  <div class="math">
+	    \[\begin{split}J     &amp;= \det(F), \\
+	    I_{c} &amp;= {\rm trace}(C).\end{split}\]</div>
+	  <p>This demo considers a common neo-Hookean stored energy model of the form</p>
+	  <div class="math">
+	    \[\psi =  \frac{\mu}{2} (I_{c} - 3) - \mu \ln(J) + \frac{\lambda}{2}\ln(J)^{2}\]</div>
+	  <p>where <span class="math">\(\mu\)</span> and <span class="math">\(\lambda\)</span> are the Lame parameters. These
+	    can be expressed in terms of the more common Young&#8217;s modulus <span class="math">\(E\)</span>
+	    and Poisson ratio <span class="math">\(\nu\)</span> by:</p>
+	  <div class="math">
+	    \[\lambda = \frac{E \nu}{(1 + \nu)(1 - 2\nu)}, \quad  \quad
+	    \mu     =  \frac{E}{2(1 + \nu)} .\]</div>
+	</div>
+	<div class="section" id="demo-parameters">
+	  <h4>Demo parameters<a class="headerlink" href="#demo-parameters" title="Permalink to this headline">¶</a></h4>
+	  <p>We consider a unit cube domain:</p>
+	  <ul class="simple">
+	    <li><span class="math">\(\Omega = (0, 1) \times (0, 1) \times (0, 1)\)</span> (unit cube)</li>
+	  </ul>
+	  <p>We use the following definitions of the boundary and boundary conditions:</p>
+	  <ul>
+	    <li><p class="first"><span class="math">\(\Gamma_{D_{0}} = 0 \times (0, 1) \times (0, 1)\)</span> (Dirichlet boundary)</p>
+	    </li>
+	    <li><p class="first"><span class="math">\(\Gamma_{D_{1}} = 1 \times (0, 1) \times (0, 1)\)</span> (Dirichlet boundary)</p>
+	    </li>
+	    <li><p class="first"><span class="math">\(\Gamma_{N} = \partial \Omega \backslash \Gamma_{D}\)</span> (Neumann boundary)</p>
+	    </li>
+	    <li><dl class="first docutils">
+		<dt>On  <span class="math">\(\Gamma_{D_{0}}\)</span></dt>
+		<dd><div class="first last math">
+		    \[\begin{split}u = (&amp;0, \\
+		    &amp;(0.5 + (y - 0.5)\cos(\pi/3) - (z - 0.5)\sin(\pi/3) - y)/2, \\
+		    &amp;(0.5 + (y - 0.5)\sin(\pi/3) + (z - 0.5)\cos(\pi/3) - x))/2)\end{split}\]</div>
+		</dd>
+	      </dl>
+	    </li>
+	    <li><p class="first">On <span class="math">\(\Gamma_{D_{1}}\)</span>:  <span class="math">\(u = (0, 0, 0)\)</span></p>
+	    </li>
+	    <li><p class="first">On <span class="math">\(\Gamma_{N}\)</span>: <span class="math">\(T = (0.1, 0, 0)\)</span></p>
+	    </li>
+	  </ul>
+	  <p>These are the body forces and material parameters used:</p>
+	  <ul class="simple">
+	    <li><span class="math">\(B = (0, -0.5, 0)\)</span></li>
+	    <li><span class="math">\(E    = 10.0\)</span></li>
+	    <li><span class="math">\(\nu  = 0.3\)</span></li>
+	  </ul>
+	  <p>With the above input the solution for <span class="math">\(u\)</span> will look as follows:</p>
+	  <a class="reference internal image-reference" href="img/hyperelasticity_u0.png"><img alt="img/hyperelasticity_u0.png" class="align-center" src="img/hyperelasticity_u0.png" /></a>
+	  <a class="reference internal image-reference" href="img/hyperelasticity_u1.png"><img alt="img/hyperelasticity_u1.png" class="align-center" src="img/hyperelasticity_u1.png" /></a>
+	</div>
+      </div>
+      <div class="section" id="implementation">
+	<h3>Implementation<a class="headerlink" href="#implementation" title="Permalink to this headline">¶</a></h3>
+	<p>This demo is implemented in the <tt class="xref download docutils literal"><span class="pre">demo_hyperelasticity.py</span></tt>
+	  file.</p>
+	<p>First, the <tt class="xref py py-mod docutils literal"><span class="pre">dolfin</span></tt> module is imported:</p>
+	<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">dolfin</span> <span class="kn">import</span> <span class="o">*</span>
+	  </pre></div>
+	</div>
+	<p>The behavior of the form compiler FFC can be adjusted by prescribing
+	  various parameters. Here, we want to use some of the optimization
+	  features.</p>
+	<div class="highlight-python"><div class="highlight"><pre><span class="c"># Optimization options for the form compiler</span>
+	      <span class="n">parameters</span><span class="p">[</span><span class="s">&quot;form_compiler&quot;</span><span class="p">][</span><span class="s">&quot;cpp_optimize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+	      <span class="n">ffc_options</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;optimize&quot;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span> \
+              <span class="s">&quot;eliminate_zeros&quot;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span> \
+              <span class="s">&quot;precompute_basis_const&quot;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span> \
+              <span class="s">&quot;precompute_ip_const&quot;</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
+	  </pre></div>
+	</div>
+	<p>The first line tells the form compiler to use C++ compiler optimizations when
+	  compiling the generated code. The remainder is a dictionary of options which
+	  will be passed to the form compiler. It lists the optimizations strategies
+	  that we wish the form compiler to use when generating code.</p>
+	<p id="index-0">First, we need a tetrahedral mesh of the domain and a function space
+	  on this mesh. Here, we choose to create a unit cube mesh with 17 ( =
+	  16 + 1) vertices in each direction. On this mesh, we define a function
+	  space of continuous piecewise linear vector polynomials (a Lagrange
+	  vector element space):</p>
+	<div class="highlight-python"><div class="highlight"><pre><span class="c"># Create mesh and define function space</span>
+	      <span class="n">mesh</span> <span class="o">=</span> <span class="n">UnitCubeMesh</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+	      <span class="n">V</span> <span class="o">=</span> <span class="n">VectorFunctionSpace</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="s">&quot;Lagrange&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+	  </pre></div>
+	</div>
+	<p>Note that <tt class="xref py py-class docutils literal"><span class="pre">VectorFunctionSpace</span></tt> creates a
+	  function space of vector fields. The dimension of the vector field
+	  (the number of components) is assumed to be the same as the spatial
+	  dimension, unless otherwise specified.</p>
+	<p id="index-1">The portions of the boundary on which Dirichlet boundary conditions
+	  will be applied are now defined:</p>
+	<div class="highlight-python"><div class="highlight"><pre><span class="c"># Mark boundary subdomians</span>
+	      <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">compile_subdomains</span><span class="p">([</span><span class="s">&quot;(std::abs(x[0])       &lt; DOLFIN_EPS) &amp;&amp; on_boundary&quot;</span><span class="p">,</span>
+              <span class="s">&quot;(std::abs(x[0] - 1.0) &lt; DOLFIN_EPS) &amp;&amp; on_boundary&quot;</span><span class="p">])</span>
+	  </pre></div>
+	</div>
+	<p>The boundary subdomain <tt class="docutils literal"><span class="pre">left</span></tt> corresponds to the part of the
+	  boundary on which <span class="math">\(x=0\)</span> and the boundary subdomain <tt class="docutils literal"><span class="pre">right</span></tt>
+	  corresponds to the part of the boundary on which <span class="math">\(x=1\)</span>. Note
+	  that C++ syntax is used in the <tt class="xref py py-func docutils literal"><span class="pre">compile_subdomains</span></tt> function since
+	  the function will be automatically compiled into C++ code for
+	  efficiency. The (built-in) variable <tt class="docutils literal"><span class="pre">on_boundary</span></tt> is true for points
+	  on the boundary of a domain, and false otherwise.</p>
+	<p id="index-2">The Dirichlet boundary values are defined using compiled expressions:</p>
+	<div class="highlight-python"><div class="highlight"><pre><span class="c"># Define Dirichlet boundary (x = 0 or x = 1)</span>
+	      <span class="n">c</span> <span class="o">=</span> <span class="n">Expression</span><span class="p">((</span><span class="s">&quot;0.0&quot;</span><span class="p">,</span> <span class="s">&quot;0.0&quot;</span><span class="p">,</span> <span class="s">&quot;0.0&quot;</span><span class="p">))</span>
+	      <span class="n">r</span> <span class="o">=</span> <span class="n">Expression</span><span class="p">((</span><span class="s">&quot;scale*0.0&quot;</span><span class="p">,</span>
+              <span class="s">&quot;scale*(y0 + (x[1] - y0)*cos(theta) - (x[2] - z0)*sin(theta) - x[1])&quot;</span><span class="p">,</span>
+              <span class="s">&quot;scale*(z0 + (x[1] - y0)*sin(theta) + (x[2] - z0)*cos(theta) - x[2])&quot;</span><span class="p">),</span>
+              <span class="n">scale</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">z0</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+	  </pre></div>
+	</div>
+	<p>Note the use of setting named parameters in the <tt class="xref py py-class docutils literal"><span class="pre">Expression</span></tt> for <tt class="docutils literal"><span class="pre">r</span></tt>.</p>
+	<p>The boundary subdomains and the boundary condition expressions are
+	  collected together in two <tt class="xref py py-class docutils literal"><span class="pre">DirichletBC</span></tt> objects, one for each part of the
+	  Dirichlet boundary:</p>
+	<div class="highlight-python"><div class="highlight"><pre><span class="n">bcl</span> <span class="o">=</span> <span class="n">DirichletBC</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">left</span><span class="p">)</span>
+	      <span class="n">bcr</span> <span class="o">=</span> <span class="n">DirichletBC</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+	      <span class="n">bcs</span> <span class="o">=</span> <span class="p">[</span><span class="n">bcl</span><span class="p">,</span> <span class="n">bcr</span><span class="p">]</span>
+	  </pre></div>
+	</div>
+	<p>The Dirichlet (essential) boundary conditions are constraints on the
+	  function space <span class="math">\(V\)</span>. The function space is therefore required as
+	  an argument to <tt class="xref py py-class docutils literal"><span class="pre">DirichletBC</span></tt>.</p>
+	<p id="index-3">Trial and test functions, and the most recent approximate displacement
+	  <tt class="docutils literal"><span class="pre">u</span></tt> are defined on the finite element space <tt class="docutils literal"><span class="pre">V</span></tt>, and two objects
+	  of type <tt class="xref py py-class docutils literal"><span class="pre">Constant</span></tt> are
+	  declared for the body force (<tt class="docutils literal"><span class="pre">B</span></tt>) and traction (<tt class="docutils literal"><span class="pre">T</span></tt>) terms:</p>
+	<div class="highlight-python"><div class="highlight"><pre><span class="c"># Define functions</span>
+	      <span class="n">du</span> <span class="o">=</span> <span class="n">TrialFunction</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>            <span class="c"># Incremental displacement</span>
+	      <span class="n">v</span>  <span class="o">=</span> <span class="n">TestFunction</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>             <span class="c"># Test function</span>
+	      <span class="n">u</span>  <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>                 <span class="c"># Displacement from previous iteration</span>
+	      <span class="n">B</span>  <span class="o">=</span> <span class="n">Constant</span><span class="p">((</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>  <span class="c"># Body force per unit volume</span>
+	      <span class="n">T</span>  <span class="o">=</span> <span class="n">Constant</span><span class="p">((</span><span class="mf">0.1</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>  <span class="c"># Traction force on the boundary</span>
+	  </pre></div>
+	</div>
+	<p>In place of <tt class="xref py py-class docutils literal"><span class="pre">Constant</span></tt>,
+	  it is also possible to use <tt class="docutils literal"><span class="pre">as_vector</span></tt>, e.g.  <tt class="docutils literal"><span class="pre">B</span> <span class="pre">=</span> <span class="pre">as_vector(</span> <span class="pre">[0.0,</span>
+	    <span class="pre">-0.5,</span> <span class="pre">0.0]</span> <span class="pre">)</span></tt>. The advantage of Constant is that its values can be
+	  changed without requiring re-generation and re-compilation of C++
+	  code. On the other hand, using <tt class="docutils literal"><span class="pre">as_vector</span></tt> can eliminate some
+	  function calls during assembly.</p>
+	<p>With the functions defined, the kinematic quantities involved in the model
+	  are defined using UFL syntax:</p>
+	<div class="highlight-python"><div class="highlight"><pre><span class="c"># Kinematics</span>
+	      <span class="n">I</span> <span class="o">=</span> <span class="n">Identity</span><span class="p">(</span><span class="n">V</span><span class="o">.</span><span class="n">cell</span><span class="p">()</span><span class="o">.</span><span class="n">d</span><span class="p">)</span>    <span class="c"># Identity tensor</span>
+	      <span class="n">F</span> <span class="o">=</span> <span class="n">I</span> <span class="o">+</span> <span class="n">grad</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>             <span class="c"># Deformation gradient</span>
+	      <span class="n">C</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="n">F</span>                   <span class="c"># Right Cauchy-Green tensor</span>
+	      <span class="c"># Invariants of deformation tensors</span>
+	      <span class="n">Ic</span> <span class="o">=</span> <span class="n">tr</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+	      <span class="n">J</span>  <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
+	  </pre></div>
+	</div>
+	<p>Next, the material parameters are set and the strain energy density
+	  and the total potential energy are defined, again using UFL syntax:</p>
+	<div class="highlight-python"><div class="highlight"><pre class="text-info"><span class="c"># Elasticity parameters</span>
+	      <span class="n">E</span><span class="p">,</span> <span class="n">nu</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">0.3</span>
+	      <span class="n">mu</span><span class="p">,</span> <span class="n">lmbda</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">nu</span><span class="p">))),</span> <span class="n">Constant</span><span class="p">(</span><span class="n">E</span><span class="o">*</span><span class="n">nu</span><span class="o">/</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">nu</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">nu</span><span class="p">)))</span>
+	      <span class="c"># Stored strain energy density (compressible neo-Hookean model)</span>
+	      <span class="n">psi</span> <span class="o">=</span> <span class="p">(</span><span class="n">mu</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">Ic</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">mu</span><span class="o">*</span><span class="n">ln</span><span class="p">(</span><span class="n">J</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">lmbda</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">ln</span><span class="p">(</span><span class="n">J</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>
+	      <span class="c"># Total potential energy</span>
+	      <span class="n">Pi</span> <span class="o">=</span> <span class="n">psi</span><span class="o">*</span><span class="n">dx</span> <span class="o">-</span> <span class="n">dot</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span><span class="o">*</span><span class="n">dx</span> <span class="o">-</span> <span class="n">dot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span><span class="o">*</span><span class="n">ds</span>
+	  </pre></div>
+	</div>
+	<p><a class="btn btn-primary" href="#">Update calculation &raquo;</a></p>
+	<p>Just as for the body force and traction vectors, <tt class="xref py py-class docutils literal"><span class="pre">Constant</span></tt> has been used for the model
+	  parameters <tt class="docutils literal"><span class="pre">mu</span></tt> and <tt class="docutils literal"><span class="pre">lmbda</span></tt> to avoid re-generation of C++ code
+	  when changing model parameters. Note that <tt class="docutils literal"><span class="pre">lambda</span></tt> is a reserved
+	  keyword in Python, hence the misspelling <tt class="docutils literal"><span class="pre">lmbda</span></tt>.</p>
+	<p id="index-4">Directional derivatives are now computed of <span class="math">\(\Pi\)</span> and <span class="math">\(L\)</span>
+	  (see <a href="#equation-first_variation">(1)</a> and <a href="#equation-second_variation">(2)</a>):</p>
+	<div class="highlight-python"><div class="highlight"><pre><span class="c"># Compute first variation of Pi (directional derivative about u in the direction of v)</span>
+	      <span class="n">F</span> <span class="o">=</span> <span class="n">derivative</span><span class="p">(</span><span class="n">Pi</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+	      <span class="c"># Compute Jacobian of F</span>
+	      <span class="n">J</span> <span class="o">=</span> <span class="n">derivative</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">du</span><span class="p">)</span>
+	  </pre></div>
+	</div>
+	<p>The complete variational problem can now be solved by a single call to
+	  <tt class="xref py py-func docutils literal"><span class="pre">solve</span></tt>:</p>
+	<div class="highlight-python"><div class="highlight"><pre><span class="c"># Solve variational problem</span>
+	      <span class="n">solve</span><span class="p">(</span><span class="n">F</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">bcs</span><span class="p">,</span> <span class="n">J</span><span class="o">=</span><span class="n">J</span><span class="p">,</span>
+	      <span class="n">form_compiler_parameters</span><span class="o">=</span><span class="n">ffc_options</span><span class="p">)</span>
+	  </pre></div>
+	</div>
+	<p>The dictionary of form compiler options, which were defined initially,
+	  is supplied using <tt class="docutils literal"><span class="pre">form_compiler_parameters</span> <span class="pre">=</span> <span class="pre">ffc_options</span></tt>.</p>
+	<p>Finally, the solution <tt class="docutils literal"><span class="pre">u</span></tt> is saved to a file named
+	  <tt class="docutils literal"><span class="pre">displacement.pvd</span></tt> in VTK format, and the deformed mesh is plotted
+	  to the screen:</p>
+	<div class="highlight-python"><div class="highlight"><pre><span class="c"># Save solution in VTK format</span>
+	      <span class="nb">file</span> <span class="o">=</span> <span class="n">File</span><span class="p">(</span><span class="s">&quot;displacement.pvd&quot;</span><span class="p">);</span>
+	      <span class="nb">file</span> <span class="o">&lt;&lt;</span> <span class="n">u</span><span class="p">;</span>
+	      <span class="c"># Plot and hold solution</span>
+	      <span class="n">plot</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="s">&quot;displacement&quot;</span><span class="p">,</span> <span class="n">interactive</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+	  </pre></div>
+	</div>
+      </div>
+    </div>
+  </div>
+  <div class="span6">
+    <div id="visualization">
+    </div>
+  </div>
+</div>
