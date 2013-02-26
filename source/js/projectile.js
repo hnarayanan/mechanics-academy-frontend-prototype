@@ -5,9 +5,6 @@ var framePeriod = 30; // Number of ms to display each frame
 var canvasWidth = 640;
 var canvasHeight = 480;
 
-var width = 100; // m
-var height = 100; // m
-
 var widthMToPixels = 0;
 var heightMToPixels = 0;
 
@@ -93,8 +90,8 @@ $(document).ready(function() {
             ctx.clearRect(0, 0, canvasWidth, canvasHeight);
             
             // Get the data from the form
-            width = 100;
-            height = 100;
+            width = 170;
+            height = 85;
             gravitationalAcceleration = $('#gravity').val();
             initSpeed = $('#initspeed').val();
             initAngle = $('#angle').val() * Math.PI / 180; // Convert argument from degrees to radians
