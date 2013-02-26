@@ -1,0 +1,58 @@
+---
+title: Projectile motion
+contains:
+  - A JavaScript demo of projectile motion
+goals: 1
+ideas:
+  - bar
+projectile: true
+exercise: true
+---
+
+<div class="row-fluid">
+  <div class="span4">
+    <h2>Projectile motion</h2>
+    <p>Remember that at any time $t$, the projectile's vertical and horizontal displacement can be calculated by:</p>
+    <div>
+      \[\begin{aligned}
+      x &amp; = v_0\, t \cos(\theta) \\
+      y &amp; = v_0\, t \sin(\theta) - \frac{1}{2}g\, t^2
+      \end{aligned} \]
+    </div>
+    <hr>
+    <p>Can you find the angle at which the projectile travels furthest when launched at 20 m/s. Does this angle change if you launch the projectile at 30 m/s?</p>
+    <form action="" method="get" id="values" class="form-horizontal">
+      <div class="control-group">
+	<label class="control-label" for="initspeed">Initial speed $(v_0)$<br><span class="muted">m/s</span></label>
+	<div class="controls">
+	  <input type="text" id="initspeed" value="40">
+	</div>
+      </div>
+      <div class="control-group">
+	<label class="control-label" for="angle">Launch angle $(\theta)$<br><span class="muted">degrees</span></label>
+	<div class="controls">
+	  <input type="text" id="angle" value="80">
+	</div>
+      </div>
+      <div class="control-group">
+	<label class="control-label" for="gravity">Gravity $(g)$<br><span class="muted">m/s$^2$</span></label>
+	<div class="controls">
+	  <input type="text" id="gravity" value="-9.81">
+	</div>
+      </div>
+      <div class="control-group">
+	<div class="controls">
+	  <label class="checkbox" for="display-velocity">
+            <input type="checkbox" name="display-velocity" id="display-velocity">Display velocity vector?
+	  </label>
+	  <hr>
+	  <input type="button" id="animate" class="btn btn-primary" value="Launch!">
+	</div>
+      </div>
+    </form>
+  </div>
+  <div class="span7 offset1">
+    <canvas id="graph" width="640" height="480" style="border:1px solid #000;">Your browser is not supported.</canvas>
+  </div>
+</div>
+
