@@ -6,7 +6,7 @@ var canvasWidth = 640;
 var canvasHeight = 480;
 
 var width = 100; // m
-var height = 150; // m
+var height = 100; // m
 
 var widthMToPixels = 0;
 var heightMToPixels = 0;
@@ -94,7 +94,7 @@ $(document).ready(function() {
             
             // Get the data from the form
             width = 100;
-            height = 150;
+            height = 100;
             gravitationalAcceleration = $('#gravity').val();
             initSpeed = $('#initspeed').val();
             initAngle = $('#angle').val() * Math.PI / 180; // Convert argument from degrees to radians
