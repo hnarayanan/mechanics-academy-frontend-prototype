@@ -19,4 +19,12 @@ module CourseHelpers
     lorem.words(length).capitalize + '.'
   end
 
+  def random_color
+    palette_bright = ['#1abc9c', '#2ecc71', '#3498db', '#9b59b6', '#34495e', '#f1c40f', '#e67e22', '#e74c3c']
+    palette_dark   = ['#16a085', '#27ae60', '#2980b9', '#8e44ad', '#2c3e50', '#f39c12', '#d35400', '#c0392b']
+
+    palette = palette_bright + palette_dark
+
+    palette[Random.rand(0..(palette.length - 1))]
+  end
 end
