@@ -1,0 +1,54 @@
+Continuum Mechanics:
+  type: theory
+  instructor: Harish Narayanan
+  description: This describes the awesome continuum mechanics course
+
+Material Science:
+  type: theory
+  instructor: Harish Narayanan
+  description: This describes the awesome material science course
+
+Rigid-body Mechanics:
+  type: theory
+  instructor: Harish Narayanan
+  description: This describes the awesome rigid body mechanics course
+
+General Relativity:
+  type: theory
+  instructor: Harish Narayanan
+  description: This describes the awesome general relativity course
+
+Numerical Methods:
+  type: theory
+  instructor: Harish Narayanan
+  description: This describes the awesome numerical methods course
+
+Introduction to Python:
+  type: programming
+  instructor: Harish Narayanan
+  description: This course provides an awesome introduction to Python
+
+Introduction to Octave:
+  type: programming
+  instructor: Harish Narayanan
+  description: This course provides an awesome introduction to Octave
+
+Introduction to SymPy:
+  type: programming
+  instructor: Harish Narayanan
+  description: This course provides an awesome introduction to SymPy
+
+Introduction to FEniCS:
+  type: programming
+  instructor: Harish Narayanan
+  description: This course provides an awesome introduction to FEniCS
+
+Computational Biomechanics:
+  type: application
+  instructor: Harish Narayanan
+  description: This describes the awesome computational biomechanics course
+
+Numerical Relativity:
+  type: application
+  instructor: Harish Narayanan
+  description: This describes the awesome numerical relativity course

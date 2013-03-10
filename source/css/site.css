@@ -38,6 +38,7 @@ body {
 .headerlink {
     visibility: hidden;
 }
+
 #visualization {
     background-color:#000;
     position: fixed;

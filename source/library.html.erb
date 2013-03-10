@@ -15,13 +15,13 @@ ideas:
 </ul>
 
 <ul class="thumbnails">
-  <% 16.times do |num| %>
+  <% data.library.each do |course| %>
   <li class="span3">
     <a href="#" class="thumbnail">
-      <img data-src="holder.js/260x200/text:Course art" alt="">
+      <img data-src="holder.js/260x200/text:<%= course[0] %>/<%= type_color course[1]["type"] %>:#ffffff" alt="">
     </a>
-    <h3><%= course_name %></h3>
-    <p><%= course_description %></p>
+    <h3><%= course[0] %></h3>
+    <p><%= course[1]["description"] %>.</p>
   </li>
   <% end %>
 </ul>
