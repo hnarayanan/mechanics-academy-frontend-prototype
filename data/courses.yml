@@ -1,0 +1,71 @@
+Fundamentals of Physics &ndash; I:
+  type:	theory
+  instructor: Ramamurti Shankar
+  description: This course provides a thorough introduction to the principles and methods of physics. It emphasises problem solving and quantitative reasoning and covers Newtonian mechanics, special relativity, gravitation, thermodynamics, and waves.
+  uri: http://oyc.yale.edu/physics/phys-200
+  license: CC BY-NC-SA
+  tags:
+    - undergrad
+    - physics
+    - relativity
+
+Continuum Mechanics:
+  type: theory
+  instructor: Harish Narayanan
+  description: This course deals with the behaviour of materials modelled as continuous media rather than discrete particles.
+  uri: #
+  license: Commercial
+  tags:
+    - grad
+    - solids
+    - fluids
+
+# Material Science:
+#   type: theory
+#   instructor: Harish Narayanan
+#   description: This describes the awesome material science course
+
+# Rigid-body Mechanics:
+#   type: theory
+#   instructor: Harish Narayanan
+#   description: This describes the awesome rigid body mechanics course
+
+# General Relativity:
+#   type: theory
+#   instructor: Harish Narayanan
+#   description: This describes the awesome general relativity course
+
+# Numerical Methods:
+#   type: theory
+#   instructor: Harish Narayanan
+#   description: This describes the awesome numerical methods course
+
+# Introduction to Python:
+#   type: programming
+#   instructor: Harish Narayanan
+#   description: This course provides an awesome introduction to Python
+
+# Introduction to Octave:
+#   type: programming
+#   instructor: Harish Narayanan
+#   description: This course provides an awesome introduction to Octave
+
+# Introduction to SymPy:
+#   type: programming
+#   instructor: Harish Narayanan
+#   description: This course provides an awesome introduction to SymPy
+
+# Introduction to FEniCS:
+#   type: programming
+#   instructor: Harish Narayanan
+#   description: This course provides an awesome introduction to FEniCS
+
+# Computational Biomechanics:
+#   type: application
+#   instructor: Harish Narayanan
+#   description: This describes the awesome computational biomechanics course
+
+# Numerical Relativity:
+#   type: application
+#   instructor: Harish Narayanan
+#   description: This describes the awesome numerical relativity course
