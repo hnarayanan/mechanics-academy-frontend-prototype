@@ -1,0 +1,16 @@
+<li class="span4">
+  <a href="<%= course[1]["uri"] %>" class="thumbnail">
+    <img data-src="holder.js/265x200/text:<%= course[0] %>/<%= type_color course[1]["type"] %>:#ffffff" alt="">
+  </a>
+  <h4><%= course[0] %></h4>
+  <p><%= course[1]["description"] %></p>
+  <p><strong>Instructor</strong>: <%= course[1]["instructor"] %>, Yale</p>
+  <p><strong>License</strong>: <%= course[1]["license"] %></p>
+  <% if course[1].tags %>
+  <p>
+    <% course[1].tags.each do |tag| %>
+    <span class="label label-info"><%= tag %></span>
+    <% end %>
+    <% end %>
+  </p>
+</li>
