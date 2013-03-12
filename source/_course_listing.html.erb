@@ -4,7 +4,7 @@
   </a>
   <h4><%= course[0] %></h4>
   <p><%= course[1]["description"] %></p>
-  <p><strong>Instructor</strong>: <%= course[1]["instructor"] %>, Yale</p>
+  <p><strong>Instructor</strong>: <%= course[1]["instructor"] %>, <%= course[1]["institution"] %></p>
   <p><strong>License</strong>: <%= course[1]["license"] %></p>
   <% if course[1].tags %>
   <p>

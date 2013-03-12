@@ -1,6 +1,7 @@
 Fundamentals of Physics &ndash; I:
   type:	theory
   instructor: Ramamurti Shankar
+  institution: Yale
   description: This course provides a thorough introduction to the principles and methods of physics. It emphasises problem solving and quantitative reasoning and covers Newtonian mechanics, special relativity, gravitation, thermodynamics, and waves.
   uri: http://oyc.yale.edu/physics/phys-200
   license: CC BY-NC-SA
@@ -12,6 +13,7 @@ Fundamentals of Physics &ndash; I:
 Continuum Mechanics:
   type: theory
   instructor: Harish Narayanan
+  institution: Mechanics Academy
   description: This course deals with the behaviour of materials modelled as continuous media rather than discrete particles.
   uri: #
   license: Commercial
