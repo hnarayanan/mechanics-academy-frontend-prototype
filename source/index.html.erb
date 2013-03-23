@@ -18,15 +18,12 @@ goals: 1
   </div>
 </div>
 <hr>
-<h2>Featured learning material</h2>
+<h2>Sample learning material</h2>
 <ul class="thumbnails">
-  <% 8.times do |num| %>
-  <li class="span3">
-    <a href="#" class="thumbnail">
-      <img data-src="holder.js/260x200/text:Course art" alt="">
-    </a>
-    <h3><%= course_name %></h3>
-    <p><%= course_description %></p>
-  </li>
+  <% data.courses.each do |course| %>
+  <%= partial 'course_listing', :locals => { :course => course } %>
+  <% end %>
+  <% data.lectures.each do |lecture| %>
+  <%= partial 'course_listing', :locals => { :course => lecture } %>
   <% end %>
 </ul>

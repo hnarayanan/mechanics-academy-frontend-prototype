@@ -1,10 +1,9 @@
 Einstein for the Masses:
-  type:	theory
+  type:	Single lecture
   instructor: Ramamurti Shankar
   institution: Yale
   description: An introduction to Einstein's Theory for a lay audience. The only preparation needed is an open mind.
-  uri: http://www.youtube.com/watch?v=3enwR6e9V9A
-  license: CC BY-NC-SA
+  uri: /lectures/einstein-for-the-masses/
   tags:
     - undergrad
     - physics
