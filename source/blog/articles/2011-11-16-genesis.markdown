@@ -1,0 +1,35 @@
+---
+comments: true
+date: 2011-11-16 13:02:32
+layout: post
+slug: genesis
+title: The genesis of Mechanics Academy
+wordpress_id: 287
+categories:
+- Meta
+---
+
+[caption id="attachment_299" align="alignright" width="270" caption="Toying with different domain ideas"][![URL options for mechanicsacademy.org](http://mechanicsacademy.org/wp-content/uploads/2011/11/url-options-270x300.jpg)](http://mechanicsacademy.org/wp-content/uploads/2011/11/url-options.jpg)[/caption]
+
+I love to teach. I greatly enjoy making websites. I don't know why it took me so long to connect these dots, but from that recent connection was born _Mechanics Academy_.
+
+Mechanics Academy is a website for disseminating university-level lectures on topics I care about. These primarily include continuum mechanics theory, its application to mathematical biology and the numerical methods involved in solving the equations arising from the theory. The effort is greatly inspired by how much I've learnt from other virtual learning projects around the web. Prominent examples of these are [Khan Academy](http://www.khanacademy.org/), MIT's [OpenCourseWare](http://ocw.mit.edu/) and Stanford's [iPhone Application Development](http://www.stanford.edu/class/cs193p/cgi-bin/drupal/), [Artificial Intelligence](https://www.ai-class.com/) and [Machine Learning](http://www.ml-class.org/) classes. Each of these projects serve their respective niches very well, and Mechanics Academy hopes to be a similarly valuable resource for university students aiming to learn mechanics.
+
+From the instant the idea popped into my head about ten days ago, I have spent nearly every moment of my spare time working on it. My early efforts have focussed entirely on getting the site up and running. After spending a few hours toying with different potential domain names, I started to think about what kind of content the site should house and how it should be organised.
+
+[caption id="attachment_303" align="alignleft" width="300" caption="Classifying the content on the site."][![Classifying content](http://mechanicsacademy.org/wp-content/uploads/2011/11/content-classification-300x252.jpg)](http://mechanicsacademy.org/wp-content/uploads/2011/11/content-classification.jpg)[/caption]
+
+[caption id="attachment_310" align="alignnone" width="300" caption="Graph of the site content"][![Graph of content](http://mechanicsacademy.org/wp-content/uploads/2011/11/content-graph-e1321633985618-300x260.jpg)](http://mechanicsacademy.org/wp-content/uploads/2011/11/content-graph-e1321633985618.jpg)[/caption]
+
+In a couple of days, I was happy with the basic structure of the content and started to delve deeper into implementational aspects. This has been the focus of my efforts this past week. In that time, I've gone from a few simple sketches of how I'd like the site to look and behave to a reasonably-working implementation in [WordPress](http://wordpress.org/) using custom post-types and taxonomies to store the lectures. On that note, the source code that powers this site is available, in case you are interested in downloading it for your own needs or contributing to this project. Please [let me know](http://mechanicsacademy.org/contact/) if you are interested.
+
+[caption id="attachment_315" align="alignleft" width="300" caption="Visual layout of a lecture"][![Visual layout of a lecture](http://mechanicsacademy.org/wp-content/uploads/2011/11/lecture-layout-e1321633960978-300x251.jpg)](http://mechanicsacademy.org/wp-content/uploads/2011/11/lecture-layout-e1321633960978.jpg)[/caption]
+
+[caption id="attachment_316" align="alignnone" width="300" caption="Initial attempts at a site logo"][![First attempts at a site logo](http://mechanicsacademy.org/wp-content/uploads/2011/11/logo-attempts-1-300x162.jpg)](http://mechanicsacademy.org/wp-content/uploads/2011/11/logo-attempts-1.jpg)[/caption]
+
+
+
+
+Now that the basic site functionality is in place, I'm starting to focus my attention on generating content. Along with video lectures, the site also aims to contain related lecture notes, practice exercises and avenues to get additional help. More updates on all of this soon, after I've given myself some time to plan the lectures for the first course on [continuum mechanics](http://mechanicsacademy.org/continuum-mechanics/).
+
+For now, I'd like to thank you for your interest in this project and welcome you to it. I hope you find your stay pleasant, and that you have fun learning!
