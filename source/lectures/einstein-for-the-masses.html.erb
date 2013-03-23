@@ -4,7 +4,10 @@ content:
   - foo
 goals: 1
 ---
-
+<ul class="breadcrumb">
+  <li><%= link_to 'Library', '/library.html' %> <span class="divider">/</span></li>
+  <li><%= link_to 'Individual lectures', '/library.html#lectures' %> <span class="divider">/</span></li>
+</ul>
 <div class="row-fluid">
   <div class="span8">
     <h2>Einstein for the masses</h2>
