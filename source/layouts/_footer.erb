@@ -26,13 +26,8 @@
     <%= partial 'layouts/ideas_window' %>
     <% end %>
     <%= javascript_include_tag "jquery-1.9.1.min.js", "bootstrap", "holder", "site" %>
-    <% if data.page.exercise %>
-    <%= javascript_include_tag "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML", "http://get.goxtk.com/xtk.js", "visualizer" %>
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-      tex2jax: { inlineMath: [['$','$'],['\\(','\\)']] }
-      });
-    </script>
+    <% if data.page.xtk %>
+    <%= javascript_include_tag "http://get.goxtk.com/xtk.js", "visualizer" %>
     <% end %>
     <% if data.page.projectile %>
     <%= javascript_include_tag "projectile" %>

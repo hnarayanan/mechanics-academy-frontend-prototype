@@ -11,6 +11,14 @@
     <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag "bootstrap", "bootstrap-responsive", "font-awesome", "site" %>
     <%= javascript_include_tag  "modernizr-2.6.2-respond-1.1.0.min" %>
+    <% if data.page.mathjax %>
+    <%= javascript_include_tag "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" %>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      tex2jax: { inlineMath: [['$','$'],['\\(','\\)']] }
+      });
+    </script>
+    <% end %>
   </head>
 
   <body class="<%= page_classes %>">

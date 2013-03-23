@@ -2,10 +2,22 @@ Projectile motion exercise:
   type:	JavaScript demo
   instructor: Harish Narayanan
   institution: Mechanics Academy
-  description: A simple exercise illustrating aspects of projectile motion
+  description: A simple exercise illustrating aspects of projectile motion.
   uri: /demo/projectile/
   tags:
     - high-school
     - physics
     - gravity
   license: CC BY-NC-SA
+
+Hyperelasticity in biomedicine:
+  type:	Online PDE solver demo
+  instructor: Harish Narayanan
+  institution: Mechanics Academy
+  description: A more complex demonstration that uses <a href="http://thinkbot.net/">thinkbot</a> to compute the solution of a PDE pertinent to biomedical applications and presents a visualisation.
+  uri: /demo/hyperelasticity/
+  tags:
+    - grad
+    - computational
+    - application
+  license: Commercial
