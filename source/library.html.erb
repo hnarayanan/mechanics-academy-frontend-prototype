@@ -22,24 +22,31 @@ ideas:
   <div class="span3 sidebar">
     <h2>Learning library</h2>
     <ul class="nav nav-list sidenav">
-<!--      <li><a href="#start"><i class="icon-star"></i> <i class="icon-chevron-right"></i> Get started</a></li> -->
-      <li><a href="#courses"><i class="icon-list-alt"></i> <i class="icon-chevron-right"></i> Complete courses</a></li>
+      <li><a href="#demos"><i class="icon-star"></i> <i class="icon-chevron-right"></i> Motivating demonstrations</a></li>
       <li><a href="#lectures"><i class="icon-facetime-video"></i> <i class="icon-chevron-right"></i> Individual lectures</a></li>
+      <li><a href="#courses"><i class="icon-list-alt"></i> <i class="icon-chevron-right"></i> Complete courses</a></li>
       <li><a href="#resources"><i class="icon-book"></i> <i class="icon-chevron-right"></i> Supplemental resources</a></li>
     </ul>
   </div>
   <div class="span9">
-    <h3 id="courses">Complete courses</h3>
+    <h3 id="demos">Motivating demonstrations</h3>
     <ul class="thumbnails">
-      <% data.courses.each do |course| %>
-      <%= partial 'course_listing', :locals => { :course => course } %>
+      <% data.demos.each do |demo| %>
+      <%= partial 'course_listing', :locals => { :course => demo, :width => "span4" } %>
       <% end %>
     </ul>
-    <hr>
+    </hr>
     <h3 id="lectures">Individual lectures</h3>
     <ul class="thumbnails">
       <% data.lectures.each do |lecture| %>
-      <%= partial 'course_listing', :locals => { :course => lecture } %>
+      <%= partial 'course_listing', :locals => { :course => lecture, :width => "span4" } %>
+      <% end %>
+    </ul>
+    <hr>
+    <h3 id="courses">Complete courses</h3>
+    <ul class="thumbnails">
+      <% data.courses.each do |course| %>
+      <%= partial 'course_listing', :locals => { :course => course, :width => "span4" } %>
       <% end %>
     </ul>
     <hr>
