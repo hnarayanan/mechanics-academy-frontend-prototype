@@ -23,6 +23,9 @@ goals: 1
   <% data.lectures.each do |lecture| %>
   <%= partial 'course_listing', :locals => { :course => lecture } %>
   <% end %>
+  <% data.demos.each do |demo| %>
+  <%= partial 'course_listing', :locals => { :course => demo } %>
+  <% end %>
   <% data.courses.each do |course| %>
   <%= partial 'course_listing', :locals => { :course => course } %>
   <% end %>
