@@ -27,7 +27,10 @@
     <% end %>
     <%= javascript_include_tag "jquery-1.9.1.min.js", "bootstrap", "holder", "site" %>
     <% if data.page.xtk %>
-    <%= javascript_include_tag "http://get.goxtk.com/xtk.js", "visualizer" %>
+    <%= javascript_include_tag "xtk", "visualizer" %>
+    <% end %>
+    <% if data.page.xtk_thinkbot %>
+    <%= javascript_include_tag "xtk", "thinkbot-fetcher" %>
     <% end %>
     <% if data.page.projectile %>
     <%= javascript_include_tag "projectile" %>

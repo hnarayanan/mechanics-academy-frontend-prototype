@@ -145,3 +145,15 @@ body {
   top: auto;
   bottom: 270px;
 }
+
+#visualization1, #visualization2 {
+    background-color:#000;
+}
+
+#jobinfo1, #jobinfo2 {
+    margin-top: 30px;
+    font-size: 16px;
+}
+#jobinfo1 li, #jobinfo2 li {
+    margin-top: 6px;
+}
