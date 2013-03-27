@@ -12,10 +12,9 @@ Time.zone = "Europe/Oslo"
 
 page "dashboard.html", :layout => "logged_in_layout"
 
-
-page "blog.html", :proxy => "blog/index.html", :layout => "blog_layout"
-page "blog/2013.html", :layout => "blog_layout"
-page "blog/topic*", :layout => "blog_layout"
+with_layout :blog_layout do
+   page "/blog/*"
+end
 
 activate :blog do |blog|
   blog.permalink = "blog/:year/:month/:day/:title.html"
@@ -34,20 +33,3 @@ end
 # page "/blog/feed.xml", :layout => false
 
 activate :directory_indexes
-
-###
-# page options, layouts, aliases and proxies
-###
-
-# Per-page layout changes:
-#
-# With no layout
-# page "/path/to/file.html", :layout => false
-#
-# With alternative layout
-# page "/path/to/file.html", :layout => :otherlayout
-#
-# A path which all have the same layout
-# with_layout :admin do
-#   page "/admin/*"
-# end
