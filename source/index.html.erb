@@ -21,12 +21,12 @@ goals: 1
 <h2>Sample learning material</h2>
 <ul class="thumbnails">
   <% data.lectures.each do |lecture| %>
-  <%= partial 'course_listing', :locals => { :course => lecture, :width => "span3" } %>
+  <%= partial 'partials/course_listing', :locals => { :course => lecture, :width => "span3" } %>
   <% end %>
   <% data.demos.each do |demo| %>
-  <%= partial 'course_listing', :locals => { :course => demo, :width => "span3" } %>
+  <%= partial 'partials/course_listing', :locals => { :course => demo, :width => "span3" } %>
   <% end %>
   <% data.courses.each do |course| %>
-  <%= partial 'course_listing', :locals => { :course => course, :width => "span3" } %>
+  <%= partial 'partials/course_listing', :locals => { :course => course, :width => "span3" } %>
   <% end %>
 </ul>

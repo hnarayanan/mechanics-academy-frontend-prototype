@@ -32,21 +32,21 @@ ideas:
     <h3 id="demos">Motivating demonstrations</h3>
     <ul class="thumbnails">
       <% data.demos.each do |demo| %>
-      <%= partial 'course_listing', :locals => { :course => demo, :width => "span4" } %>
+      <%= partial 'partials/course_listing', :locals => { :course => demo, :width => "span4" } %>
       <% end %>
     </ul>
     </hr>
     <h3 id="lectures">Individual lectures</h3>
     <ul class="thumbnails">
       <% data.lectures.each do |lecture| %>
-      <%= partial 'course_listing', :locals => { :course => lecture, :width => "span4" } %>
+      <%= partial 'partials/course_listing', :locals => { :course => lecture, :width => "span4" } %>
       <% end %>
     </ul>
     <hr>
     <h3 id="courses">Complete courses</h3>
     <ul class="thumbnails">
       <% data.courses.each do |course| %>
-      <%= partial 'course_listing', :locals => { :course => course, :width => "span4" } %>
+      <%= partial 'partials/course_listing', :locals => { :course => course, :width => "span4" } %>
       <% end %>
     </ul>
     <hr>
