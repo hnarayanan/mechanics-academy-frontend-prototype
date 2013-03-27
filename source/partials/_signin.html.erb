@@ -1,0 +1,15 @@
+<div class="row-fluid">
+  <div class="span8 offset2">
+    <form>
+      <label>Email Address</label>
+      <input type="email" name="email" class="span12">
+      <label>Password</label>
+      <input type="password" name="password" class="span12">
+      <br>
+      <p><%= link_to 'Sign in', '/dashboard/', :class => "btn btn-primary btn-large"  %></p>
+      <div class="clearfix"></div>
+    </form>
+    <hr>
+    <p>Don&#8217;t have an account yet? <%= link_to "Sign up", "/dashboard" %>!
+  </div>
+</div>

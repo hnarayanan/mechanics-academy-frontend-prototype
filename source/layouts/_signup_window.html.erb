@@ -1,46 +1,5 @@
 <div id="modal-signup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modal-signupLabel" aria-hidden="true">
   <div class="modal-body">
-
-  <form class="form-horizontal">
-    <fieldset>
-      <div id="legend" class="text-center">
-        <legend class="">Join Mechanics Academy</legend>
-      </div>
-      <div class="control-group">
-        <label class="control-label" for="input01">Your Name</label>
-        <div class="controls">
-          <input type="text" placeholder="For your certificate" class="input-xlarge">
-          <p class="help-block"></p>
-        </div>
-      </div>
-      <div class="control-group">
-        <label class="control-label" for="input01">Email Address</label>
-        <div class="controls">
-          <input type="text" placeholder="you@domain.com" class="input-xlarge">
-          <p class="help-block"></p>
-        </div>
-      </div>
-      <div class="control-group">
-        <label class="control-label" for="input01">Password</label>
-        <div class="controls">
-          <input type="password" placeholder="****" class="input-xlarge">
-          <p class="help-block"></p>
-        </div>
-      </div>
-      <div class="control-group">
-	<div class="controls">
-	  <label class="checkbox">
-	    <input type="checkbox"> I agree with the  <a href="#">terms of service</a>.
-	  </label>
-	</div>
-      </div>
-      <div class="control-group">
-        <label class="control-label"></label>
-        <div class="controls">
-          <%= link_to 'Sign up', '/dashboard/', :class => "btn btn-large btn-primary"  %></li>
-        </div>
-      </div>
-    </fieldset>
-  </form>
+    <%= partial "partials/signup" %>
   </div>
 </div>

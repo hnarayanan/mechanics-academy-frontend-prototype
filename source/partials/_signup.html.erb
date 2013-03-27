@@ -1,14 +1,18 @@
-    <h2>Sign Up</h2>
+<div class="row-fluid">
+  <div class="span8 offset2">
     <form>
-      <label>Name</label>
-      <input type="text" name="fullname" class="span3">
+      <label>Your Name</label>
+      <input type="text" name="fullname" placeholder="For your certificate" class="span12">
       <label>Email Address</label>
-      <input type="email" name="email" class="span3">
+      <input type="email" name="email" placeholder="you@domain.com" class="span12">
       <label>Password</label>
-      <input type="password" name="password" class="span3">
+      <input type="password" name="password" placeholder="long-and-varied" class="span12">
       <label class="checkbox"><input type="checkbox" name="terms"> I agree with the <a href="#">Terms of Use</a>.</label>
-      <input type="submit" value="Sign up" class="btn btn-primary pull-right">
+      <br>
+      <p><%= link_to 'Sign up', '/dashboard/', :class => "btn btn-primary btn-large"  %></p>
       <div class="clearfix"></div>
     </form>
     <hr>
-    <p>Already have an account? <%= link_to "Sign in!", "#modal-signin" %>
+    <p>Already have an account? <%= link_to "Sign in", "/dashboard/" %>!
+  </div>
+</div>
