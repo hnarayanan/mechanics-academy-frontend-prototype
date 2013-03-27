@@ -15,7 +15,7 @@ Hyperelasticity in biomedicine:
   instructor: Harish Narayanan
   institution: Mechanics Academy
   description: A more complex demonstration that uses <a href="http://thinkbot.net/">thinkbot</a> to compute the solution of a PDE pertinent to biomedical applications and presents a visualisation.
-  uri: /demo/hyperelasticity/
+  uri: /demo/thinkbot-api/
   tags:
     - grad
     - computational
