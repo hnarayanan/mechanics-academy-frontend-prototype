@@ -28,8 +28,8 @@
     <div class="container">
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li><%= link_to 'Browse Library', '/library.html' %></li>
-          <li><%= link_to 'Get Help', '/support.html' %></li>
+          <li><%= link_to 'Browse Library', '/library/' %></li>
+          <li><%= link_to 'Get Help', '/support/' %></li>
 	  <% if logged_in %>
 	  <li class="dropdown">
                 <a class="dropdown-toggle" id="drop4" role="button" data-toggle="dropdown" href="#">Diligent J. Student <b class="caret"></b></a>
@@ -46,6 +46,6 @@
           <li class="active"><%= link_to 'Sign Up', '#modal-signup', :data => { :toggle=>"modal" } %></li>
 	  <% end %>
         </ul>
-        <h3> <%= link_to 'Mechanics Academy', '/' %> <sup><span class="label label-important"><%= link_to 'prototype', '/contribute.html' %></span></sup></h3>
+        <h3> <%= link_to 'Mechanics Academy', '/' %> <sup><span class="label label-important"><%= link_to 'prototype', '/contribute/' %></span></sup></h3>
       </div>
       <hr>
