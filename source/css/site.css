@@ -6,7 +6,14 @@ body {
 
 h1, h2, h3, h4, h5, button, a, .label {
     font-family: "Open Sans", "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
+}
+
+h1, h2, h3, button, a, .label {
     font-weight: 300;
+}
+
+h4, h5 {
+    font-weight: 400;
 }
 
 /* Main marketing message and sign up button */
