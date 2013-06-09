@@ -51,7 +51,7 @@ window.onload = function() {
     }
 
     $('#stretch').click(function(){
-	result = $.getValues("http://api.thinkbot.net/jobs/12/");
+	result = $.getValues("http://api.thinkbot.net/jobs/4/");
 	renderValues(result, "#jobinfo1", "visualization1");
     });
 
