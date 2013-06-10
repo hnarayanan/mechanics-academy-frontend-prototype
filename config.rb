@@ -1,11 +1,10 @@
-set :css_dir, 'css'
-set :js_dir, 'js'
-set :images_dir, 'img'
+set :css_dir, 'assets/css'
+set :js_dir, 'asset/js'
+set :images_dir, 'assets/img'
 
 configure :build do
   activate :minify_css
   activate :minify_javascript
-  activate :cache_buster
 end
 
 Time.zone = "Europe/Oslo"

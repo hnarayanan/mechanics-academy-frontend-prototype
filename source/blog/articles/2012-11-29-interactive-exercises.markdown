@@ -9,11 +9,11 @@ I've had a couple of days to really sit down and work on ideas for
 Mechanics Academy. Here is a look at how the interactive demo
 functionality (which will be the basis for exercises) is shaping up.
 
-<div class="row-fluid" style="margin-bottom:20px;">
-  <div class="span6">
+<div class="row" style="margin-bottom:20px;">
+  <div class="col col-lg-6">
     <img src="/img/blog/visual-design.jpg" alt="Visual design" class="img-polaroid">
   </div>
-  <div class="span6">
+  <div class="col col-lg-6">
     <img src="/img/blog/software-architecture.jpg" alt="Software architecture" class="img-polaroid">
   </div>
 </div>

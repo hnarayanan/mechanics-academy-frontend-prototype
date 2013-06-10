@@ -7,7 +7,7 @@ tags: Simulation Demos, thinkbot
 After a week of hard work, I've separated one of the core aspects of
 Mechanics Academy&mdash;its compute server&mdash;into a separate
 service with a clean, RESTful API. This service is called
-<a href="http://thinkbot.net.">thinkbot</a>, which I think is a pretty
+<a href="http://thinkbot.net/">thinkbot</a>, which I think is a pretty
 cute name!
 
 I believe this was an important step to take, as thinkbot can now
