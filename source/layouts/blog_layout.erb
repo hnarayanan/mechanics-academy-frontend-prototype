@@ -1,21 +1,25 @@
 <%= partial 'layouts/header', :locals => { :logged_in => false } %>
-      <div class="row-fluid">
-	<div class="span7">
-	  <%= yield %>
-	</div>
-	<div class="span3 offset2">
-	  <h3>About</h3>
-	  <p>Mechanics Academy is an online resource for anyone interested in learning mechanics. The project aims to use interactive, application-relevant simulations to engage and teach students an exciting blend of mechanics, applied mathematics and computational science.</p>
-	  <p><%= link_to 'Learn more&hellip;', '/about/', :class => 'btn' %></p>
-	  <hr>
-	  <%= partial "partials/recent_blog_posts" %>
-	  <hr>
-	  <h3>Topics</h3>
-	  <ol>
-            <% blog.tags.each do |tag, articles| %>
-            <li><a href="<%= tag_path tag %>"><%= tag %> (<%= articles.size %>)</a></li>
-            <% end %>
-	  </ol>
-	</div>
-      </div>
+
+<div class="row">
+  <div class="col-lg-8">
+    <%= yield %>
+  </div>
+  <div class="col-lg-4">
+    <div class="panel">
+      <div class="panel-heading">About</div>
+      <p>Mechanics Academy is an online resource for anyone interested in learning mechanics. The project aims to use interactive, application-relevant simulations to engage and teach students an exciting blend of mechanics, applied mathematics and computational science.</p>
+      <p><a href="/about/">Learn more&hellip;</a></p>
+    </div>
+    <%= partial "partials/recent_blog_posts" %>
+    <div class="panel">
+      <div class="panel-heading">Topics</div>
+      <ul>
+	<% blog.tags.each do |tag, articles| %>
+	<li><a href="<%= tag_path tag %>"><%= tag %> (<%= articles.size %>)</a></li>
+	<% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <%= partial 'layouts/footer', :locals => { :ideas => false } %>

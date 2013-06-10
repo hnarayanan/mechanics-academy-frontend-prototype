@@ -1,45 +1,24 @@
-      <hr>
-      <div class="footer row-fluid">
-	<div class="span6">
-          <ul class="nav nav-pills">
-            <li><%= link_to 'Browse Library', '/library/' %></li>
-            <li><%= link_to 'About Us', '/about/' %></li>
-            <li><%= link_to 'Our Blog', '/blog/' %></li>
-            <li><%= link_to 'Terms of Use', '#' %></li>
-          </ul>
-	</div>
-	<% if ideas %>
-	<div class="span3">
-	<a href="#myModal" role="button" class="btn" data-toggle="modal">Want to help?</a>
-	</div>
-        <div class="span3">
-	<% else %>
-	<div class="span6">
-	<% end %>
-	  <p class="muted text-right">&copy; 2013 <%= link_to 'Harish Narayanan', 'http://harishnarayanan.org/', :class => "muted"%></p>
-	</div>
+      <div class="footer">
+	<p class="pull-right">Powered by <a href="http://thinkbot.net/">thinkbot</a> and tea <span class="glyphicon glyphicon-leaf"></span></p>
+	<ul class="nav nav-pills">
+	  <li><a href="/library/">Browse Library</a></li>
+	  <li><a href="/about/">About the Project</a></li>
+	  <li><a href="/blog/">Our Blog</a></li>
+	  <li><a href="/terms/">Terms of Use</a></li>
+	</ul>
       </div>
+
     </div>
-    <%= partial 'layouts/signin_window' %>
-    <%= partial 'layouts/signup_window' %>
-    <% if ideas %>
-    <%= partial 'layouts/ideas_window' %>
-    <% end %>
-    <%= javascript_include_tag "jquery-1.9.1.min.js", "bootstrap", "holder", "site" %>
-    <% if data.page.xtk %>
-    <%= javascript_include_tag "xtk", "visualizer" %>
-    <% end %>
-    <% if data.page.xtk_thinkbot %>
-    <%= javascript_include_tag "xtk", "thinkbot-fetcher" %>
-    <% end %>
-    <% if data.page.projectile %>
-    <%= javascript_include_tag "projectile" %>
-    <% end %>
+
+    <%= javascript_include_tag "jquery-1.9.1.min.js", "bootstrap", "main" %>
+
     <script>
       var _gaq=[['_setAccount','UA-139341-9'],['_trackPageview']];
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
       g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
     </script>
+
   </body>
+
 </html>

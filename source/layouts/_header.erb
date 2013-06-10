@@ -3,49 +3,33 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
   <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title><%= data.page.title || "The Middleman" %></title>
+
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <%= stylesheet_link_tag "bootstrap", "bootstrap-responsive", "font-awesome", "http://fonts.googleapis.com/css?family=Open+Sans:400,300", "site" %>
+
+    <%= stylesheet_link_tag "bootstrap", "main" %>
     <%= javascript_include_tag  "modernizr-2.6.2-respond-1.1.0.min" %>
-    <% if data.page.mathjax %>
-    <%= javascript_include_tag "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" %>
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-      tex2jax: { inlineMath: [['$','$'],['\\(','\\)']] }
-      });
-    </script>
-    <% end %>
+
   </head>
 
   <body class="<%= page_classes %>">
     <!--[if lt IE 7]>
-        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
+
     <div class="container">
-      <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li><%= link_to 'Browse Library', '/library/' %></li>
-          <li><%= link_to 'Get Help', '/support/' %></li>
-	  <% if logged_in %>
-	  <li class="dropdown">
-                <a class="dropdown-toggle" id="drop4" role="button" data-toggle="dropdown" href="#">Diligent J. Student <b class="caret"></b></a>
-                <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Profile</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Account</a></li>
-                  <li role="presentation" class="divider"></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="/">Sign out</a></li>
-                </ul>
-              </li>
-	  </li>
-	  <% else %>
-          <li><%= link_to 'Sign In', '#modal-signin', :data => { :toggle=>"modal" } %></li>
-          <li class="active"><%= link_to 'Sign Up', '#modal-signup', :data => { :toggle=>"modal" } %></li>
-	  <% end %>
-        </ul>
-        <h3> <%= link_to 'Mechanics Academy', '/' %> <sup><span class="label label-important"><%= link_to 'prototype', '/contribute/' %></span></sup></h3>
+
+      <div class="header">
+	<ul class="nav nav-pills pull-right">
+	  <li><a href="/library/home/}">Browse Library</a></li>
+	  <li><a href="/support/">Get Help</a></li>
+	  <li class="active"><a href="/students/register/">Sign Up!</a></li>
+	</ul>
+	<h3><a href="/">Mechanics Academy</a> <sup><span class="label label-danger"><a href="/contribute/">beta</a></span></sup></h3>
       </div>
-      <hr>
