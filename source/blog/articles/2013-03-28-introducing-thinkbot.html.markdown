@@ -33,7 +33,7 @@ With thinkbot, one can now do the following:
 Mechanics Academy communicates with thinkbot via AJAX, and can send
 it scientific computing jobs and retrieve results. Check it out:
 
-<p><a href="/demo/thinkbot-api/"><img src="/img/blog/thinkbot-api-demo.png" class="img-polaroid" alt="thinkbot api demo" title="Scientific computing as a service"></a></p>
+<p><a href="/demo/thinkbot-api/"><img src="/assets/img/blog/thinkbot-api-demo.png" class="img-polaroid" alt="thinkbot api demo" title="Scientific computing as a service"></a></p>
 
 More documentation, logins and <em>actual science lessons using all this
 technology</em> coming soon&trade;.

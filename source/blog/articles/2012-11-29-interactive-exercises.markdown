@@ -11,10 +11,10 @@ functionality (which will be the basis for exercises) is shaping up.
 
 <div class="row" style="margin-bottom:20px;">
   <div class="col col-lg-6">
-    <img src="/img/blog/visual-design.jpg" alt="Visual design" class="img-polaroid">
+    <img src="/assets/img/blog/visual-design.jpg" alt="Visual design" class="img-polaroid">
   </div>
   <div class="col col-lg-6">
-    <img src="/img/blog/software-architecture.jpg" alt="Software architecture" class="img-polaroid">
+    <img src="/assets/img/blog/software-architecture.jpg" alt="Software architecture" class="img-polaroid">
   </div>
 </div>
 

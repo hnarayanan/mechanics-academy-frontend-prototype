@@ -10,7 +10,7 @@ interface for <a data-toggle="modal" href="#modal-signup">signing
 up</a> and logging into the site, as well as a dashboard showing
 relevant information to students once they've logged in:
 
-<p><a href="/dashboard/"><img src="/img/blog/dashboard.png" alt="A student dashboard" class="img-polaroid"></a></p>
+<p><a href="/dashboard/"><img src="/assets/img/blog/dashboard.png" alt="A student dashboard" class="img-polaroid"></a></p>
 
 The tools that are making this process as easy as pie are the powerful
 [Bootstrap](http://twitter.github.com/bootstrap) framework and
