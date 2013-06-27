@@ -158,3 +158,9 @@ label.first {
     overflow-y: hidden;
     overflow-x: auto;
 }
+
+.caption {
+    text-align: center;
+    font-size: 85%;
+    font-style: italic;
+}

@@ -1,0 +1,82 @@
+---
+title: The genesis of Mechanics Academy
+date: 2011-11-16 13:02:32
+tags: UI/UX Design, Content Architecture, Prototype Development
+---
+
+<div class="col-lg-5 col-sm-5 col-12 pull-right" style="margin-left: 20px; margin-bottom: 10px;">
+  <img class="img-thumbnail" src="/assets/img/blog/url-options.jpg">
+  <p class="caption">Toying with different domain ideas</p>
+</div>
+
+I love to teach. I greatly enjoy making websites. I don't know why it
+took me so long to connect these dots, but from that recent connection
+was born _Mechanics Academy_.
+
+Mechanics Academy is a website for disseminating university-level
+lectures on topics I care about. These primarily include continuum
+mechanics theory, its application to mathematical biology and the
+numerical methods involved in solving the equations arising from the
+theory. The effort is greatly inspired by how much I've learnt from
+other virtual learning projects around the web. Prominent examples of
+these are [Khan Academy](http://www.khanacademy.org/), MIT's
+[OpenCourseWare](http://ocw.mit.edu/) and Stanford's [iPhone
+Application
+Development](http://www.stanford.edu/class/cs193p/cgi-bin/drupal/),
+[Artificial Intelligence](https://www.ai-class.com/) and [Machine
+Learning](http://www.ml-class.org/) classes. Each of these projects
+serve their respective niches very well, and Mechanics Academy hopes
+to be a similarly valuable resource for university students aiming to
+learn mechanics.
+
+From the instant the idea popped into my head about ten days ago, I
+have spent nearly every moment of my spare time working on it. My
+early efforts have focussed entirely on getting the site up and
+running. After spending a few hours toying with different potential
+domain names, I started to think about what kind of content the site
+should house and how it should be organised.
+
+<div class="row">
+  <div class="col-sm-6">
+    <img class="img-thumbnail" src="/assets/img/blog/content-classification.jpg">
+    <p class="caption">Classifying the content on the site</p>
+  </div>
+  <div class="col-sm-6">
+    <img class="img-thumbnail" src="/assets/img/blog/content-graph.jpg">
+    <p class="caption">Graph of the site content</p>
+  </div>
+</div>
+
+In a couple of days, I was happy with the basic structure of the
+content and started to delve deeper into implementational
+aspects. This has been the focus of my efforts this past week. In that
+time, I've gone from a few simple sketches of how I'd like the site to
+look and behave to a reasonably-working implementation in
+[WordPress](http://wordpress.org/) using custom post-types and
+taxonomies to store the lectures. On that note, the source code that
+powers this site is available, in case you are interested in
+downloading it for your own needs or contributing to this
+project. Please let me know if you are interested.
+
+<div class="row">
+  <div class="col-sm-6">
+    <img class="img-thumbnail" src="/assets/img/blog/lecture-layout.jpg">
+    <p class="caption">Visual layout of a lecture</p>
+  </div>
+  <div class="col-sm-6">
+    <img class="img-thumbnail" src="/assets/img/blog/logo-attempts.jpg">
+    <p class="caption">First attempts at a site logo</p>
+  </div>
+</div>
+
+Now that the basic site functionality is in place, I'm starting to
+focus my attention on generating content. Along with video lectures,
+the site also aims to contain related lecture notes, practice
+exercises and avenues to get additional help. More updates on all of
+this soon, after I've given myself some time to plan the lectures for
+the first course on [continuum
+mechanics](http://mechanicsacademy.com/library/course/nonlinear-elasticity/).
+
+For now, I'd like to thank you for your interest in this project and
+welcome you to it. I hope you find your stay pleasant, and that you
+have fun learning!
