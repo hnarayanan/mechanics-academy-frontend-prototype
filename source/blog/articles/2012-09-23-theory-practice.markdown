@@ -1,6 +1,6 @@
 ---
 title: Practical complexity and theoretical insight
-date: 2012-01-23 19:33:30
+date: 2012-09-23 19:33:30
 tags: Education Philosophy
 ---
 

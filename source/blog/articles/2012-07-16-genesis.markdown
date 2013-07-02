@@ -1,6 +1,6 @@
 ---
 title: The genesis of Mechanics Academy
-date: 2011-11-16 13:02:32
+date: 2012-07-16 13:02:32
 tags: UI/UX Design, Content Architecture, Prototype Development
 ---
 
