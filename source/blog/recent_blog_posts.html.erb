@@ -1,0 +1,13 @@
+---
+layout: "empty"
+---
+
+<ul class="list-unstyled">
+  <% blog.articles[0...5].each do |article| %>
+  <li>
+    <a href="<%= article.url %>"><%= article.title %></a>
+    <br>
+    <p><small><%= article.date.strftime('%B %e, %Y') %></small></p>
+  </li>
+  <% end %>
+</ul>
