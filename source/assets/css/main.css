@@ -1,85 +1,86 @@
-/* Space out content a bit */
+/* Customization atop bootstrap */
+
 body {
-    padding-top: 20px;
-    padding-bottom: 20px;
     text-rendering: optimizeLegibility;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile-first views */
-.header,
-.marketing,
-.footer {
-    padding-left: 15px;
-    padding-right: 15px;
+img {
+    max-width: 100%;
 }
 
-.footer {
-    margin-top: 40px;
+.header .navbar {
+    border-bottom: solid 1px #e5e5e5;
+    margin-bottom: 30px;
 }
 
-/* Custom page header */
-.header {
-    border-bottom: 1px solid #e5e5e5;
+.navbar ul li a {
+    color: #428bca;
 }
 
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
+.navbar-brand {
+    margin-top: 19px;
+    line-height: 30px;
     padding-bottom: 19px;
 }
 
-/* Custom page footer */
-.footer {
-    padding-top: 19px;
+.footer .navbar {
     color: #777;
+    margin-top: 30px;
     border-top: 1px solid #e5e5e5;
-  }
-
-/* Custom container */
-.container-narrow {
-    margin: 0 auto;
-    max-width: 700px;
-}
-.container-narrow > hr {
-    margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
+.footer  p {
+    margin-top: 24px;
+    padding-right: 10px;
+}
+
+.marketing h3 {
+    margin-top: 10px;
+}
+
 .jumbotron {
     text-align: center;
-    border-bottom: 1px solid #e5e5e5;
 }
 
-/* Supporting marketing content */
-.marketing {
-    margin: 40px 0;
-}
-.marketing p + h4 {
-    margin-top: 28px;
+.label a {
+    color: #fff;
+    text-decoration: none;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    /* Remove the padding we set earlier */
-    .header,
-    .marketing,
-    .footer {
-	padding-left: 0;
-	padding-right: 0;
-    }
-    /* Space out the masthead */
-    .header {
-	margin-bottom: 30px;
-    }
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-	border-bottom: 0;
-    }
+label {
+    margin-top: 20px;
+}
+
+label.first {
+    margin-top: 0;
+}
+
+.btn-block {
+    margin: 20px 0 30px 0;
+}
+
+.errorlist {
+    color: #d9534f;
+}
+
+.caption {
+    text-align: center;
+    font-size: 85%;
+    font-style: italic;
+}
+
+.todo {
+  padding: 15px 30px 15px 15px;
+  background-color: #fcf2f2;
+  border-left: 5px solid #df7c7b;
+}
+
+.todo h1, h2, h3, h4 {
+  margin-top: 0;
 }
 
 /* Flexible video embeds from YouTube and Vimeo */
+
 .flex-video {
   position: relative;
   padding-top: 25px;
@@ -107,46 +108,7 @@ body {
   height: 100%;
 }
 
-/* Todo blocks based on bs-callout in bootstrap docs */
-.todo {
-  padding: 15px 30px 15px 15px;
-  background-color: #fcf2f2;
-  border-left: 5px solid #df7c7b;
-}
-.todo h1, h2, h3, h4 {
-  margin-top: 0;
-}
-
-/*  Miscellaneous fixes */
-.btn-block {
-    margin: 20px 0 30px 0;
-}
-
-.errorlist {
-    color: #d9534f;
-}
-
-.label a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.footer > p {
-    margin-top: 9px;
-    padding-right: 10px;
-}
-
-.marketing h3 {
-    margin-top: 10px;
-}
-
-label {
-    margin-top: 20px;
-}
-
-label.first {
-    margin-top: 0;
-}
+/* CodeMirror customization */
 
 .CodeMirror {
     border: 1px solid #cccccc;
@@ -157,10 +119,4 @@ label.first {
 .CodeMirror-scroll {
     overflow-y: hidden;
     overflow-x: auto;
-}
-
-.caption {
-    text-align: center;
-    font-size: 85%;
-    font-style: italic;
 }
