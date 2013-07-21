@@ -1,9 +1,5 @@
 <% wrap_layout :blog_layout do %>
-<div class="panel">
-  <div class="panel-heading"><h3><%= current_page.title %></h3></div>
-  <%= yield %>
-  <div class="panel-footer">
-    <%= current_page.date.strftime('%B %e, %Y') %> &mdash; <%= link_to "Read other entries", "/blog/" %>
-  </div>
-</div>
+<h2><%= current_page.title %></h2>
+<%= yield %>
+<p class="text-muted"><%= current_page.date.strftime('%B %e, %Y') %> &mdash; <%= link_to "Read other entries", "/blog/" %></p>
 <% end %>

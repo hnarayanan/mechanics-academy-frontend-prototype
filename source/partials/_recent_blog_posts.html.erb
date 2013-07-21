@@ -1,12 +1,10 @@
-<div class="panel">
-  <div class="panel-heading">Recent blog posts</div>
-  <ul class="unstyled">
-    <% blog.articles[0...10].each do |article| %>
-    <li>
-      <a href="<%= article.url %>"><%= article.title %></a>
-      <br>
-      <p class="muted"><small><%= article.date.strftime('%B %e, %Y') %></small></p>
+<h3>Recent entries</h3>
+<ul class="list-unstyled">
+  <% blog.articles[0...5].each do |article| %>
+  <li>
+    <a href="<%= article.url %>"><%= article.title %></a>
+    <br>
+    <p class="muted"><small><%= article.date.strftime('%B %e, %Y') %></small></p>
     </li>
-    <% end %>
-  </ul>
-</div>
+  <% end %>
+</ul>
